@@ -1,0 +1,88 @@
+\hypertarget{printing_8php_source}{}\doxysection{printing.\+php}
+\mbox{\hyperlink{printing_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00001}00001 <?php}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00011}\mbox{\hyperlink{printing_8php_a45b1af71a9e12f6c564f31d57aeefa3f}{00011}} \textcolor{keyword}{function} \mbox{\hyperlink{printing_8php_a45b1af71a9e12f6c564f31d57aeefa3f}{print\_posts}}(\$active\_city, \mbox{\hyperlink{ajax_8php_a110f01b4c920895fc1620b669f8521d0}{\$city\_array}}) \{}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00012}00012     \textcolor{keywordflow}{if} (filesize(\textcolor{stringliteral}{"{}./city\_tips/city\_tips.json"{}}) != 0) \{}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00014}00014         \textcolor{comment}{//PRINT FIRST 5 POSTS ON PAGE AND ADD REST TO ARRAY}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00015}00015         \textcolor{keywordflow}{if} (!empty(\mbox{\hyperlink{ajax_8php_a110f01b4c920895fc1620b669f8521d0}{\$city\_array}})) \{}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00016}00016             \mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}index"{}}] = 0;}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00017}00017             \textcolor{keywordflow}{while} (True) \{}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00018}00018                 \textcolor{comment}{//Save data from array into a variable}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00019}00019                 \textcolor{keywordflow}{if} (array\_key\_exists(\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}index"{}}], \mbox{\hyperlink{ajax_8php_a110f01b4c920895fc1620b669f8521d0}{\$city\_array}})) \{}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00020}00020                     \$title = \mbox{\hyperlink{ajax_8php_a110f01b4c920895fc1620b669f8521d0}{\$city\_array}}[\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}index"{}}]]-\/>title;}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00021}00021                     \$text = \mbox{\hyperlink{ajax_8php_a110f01b4c920895fc1620b669f8521d0}{\$city\_array}}[\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}index"{}}]]-\/>text;}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00022}00022                     \$author = \mbox{\hyperlink{ajax_8php_a110f01b4c920895fc1620b669f8521d0}{\$city\_array}}[\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}index"{}}]]-\/>author;}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00023}00023                     \$date = \mbox{\hyperlink{ajax_8php_a110f01b4c920895fc1620b669f8521d0}{\$city\_array}}[\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}index"{}}]]-\/>date;}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00024}00024                     \$id = \mbox{\hyperlink{ajax_8php_a110f01b4c920895fc1620b669f8521d0}{\$city\_array}}[\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}index"{}}]]-\/>id;}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00025}00025             }
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00026}00026                     \textcolor{comment}{//Add the variables into a big html printing variable and make sure they aren't malicious}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00027}00027                     \$html\_printing = }
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00028}00028                     \textcolor{stringliteral}{"{}<div class='post-\/div'>}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00029}00029 \textcolor{stringliteral}{                    <p class='post-\/title'>"{}}.htmlspecialchars(\$title).\textcolor{stringliteral}{"{}</p> }}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00030}00030 \textcolor{stringliteral}{                    <p class='post-\/text'>"{}}.htmlspecialchars(\$text).\textcolor{stringliteral}{"{}</p> }}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00031}00031 \textcolor{stringliteral}{                    <p class='post-\/author'>User: "{}}.htmlspecialchars(\$author).\textcolor{stringliteral}{"{}</p>}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00032}00032 \textcolor{stringliteral}{                    <p class='post-\/date'>"{}}.htmlspecialchars(\$date).\textcolor{stringliteral}{"{}</p>"{}};}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00033}00033                 }
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00034}00034                     \textcolor{comment}{//If a user is an admin, show a delete button under each post}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00035}00035                     \textcolor{keywordflow}{if} ((\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}isadmin"{}}] == \textcolor{keyword}{true})) \{}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00036}00036                         \$html\_printing .= }
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00037}00037                         \textcolor{stringliteral}{"{}<form method='post' action='./scripts/user\_inputs.php?city=\$active\_city'>}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00038}00038 \textcolor{stringliteral}{                        <input type='hidden' name='id' value="{}}.\$id.\textcolor{stringliteral}{"{}>}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00039}00039 \textcolor{stringliteral}{                        <button class='delete-\/button' type='submit' name='delete\_submit'>Delete</button>}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00040}00040 \textcolor{stringliteral}{                        </form>}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00041}00041 \textcolor{stringliteral}{                        </div>"{}};}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00042}00042                     \}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00043}00043                     \textcolor{comment}{//Or if the post is owned by the logged in user, show a delete button}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00044}00044                     elseif (isset(\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}username"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00045}00045                         \textcolor{keywordflow}{if} (\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}username"{}}] == \$author) \{}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00046}00046                             \$html\_printing .= }
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00047}00047                             \textcolor{stringliteral}{"{}<form method='post' action='./scripts/user\_inputs.php?city=\$active\_city'>}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00048}00048 \textcolor{stringliteral}{                            <input type='hidden' name='id' value="{}}.\$id.\textcolor{stringliteral}{"{}>}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00049}00049 \textcolor{stringliteral}{                            <button class='delete-\/button' type='submit' name='delete\_submit'>Delete</button>}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00050}00050 \textcolor{stringliteral}{                            </form>}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00051}00051 \textcolor{stringliteral}{                            </div>"{}};}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00052}00052                         \}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00053}00053                         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00054}00054                             \$html\_printing .= \textcolor{stringliteral}{"{}</div>"{}};}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00055}00055                         \}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00056}00056                     \}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00057}00057                     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00058}00058                         \$html\_printing .= \textcolor{stringliteral}{"{}</div>"{}};}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00059}00059                     \}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00060}00060                     \textcolor{comment}{//If 6 posts have been saved, print it on the page and break}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00061}00061                     \textcolor{keywordflow}{if} ((\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}index"{}}] == 5)) \{}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00062}00062                         \mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}index"{}}] +=1;}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00063}00063                         \textcolor{keywordflow}{if} (array\_key\_exists(\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}index"{}}], \mbox{\hyperlink{ajax_8php_a110f01b4c920895fc1620b669f8521d0}{\$city\_array}})) \{}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00064}00064                             \mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}show\_button"{}}] = True;}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00065}00065                             echo \$html\_printing;}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00066}00066                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00067}00067                         \}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00068}00068                         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00069}00069                             \mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}show\_button"{}}] = False;}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00070}00070                             echo \$html\_printing;}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00071}00071                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00072}00072                         \}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00073}00073                     \}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00074}00074                     \textcolor{comment}{//Else print the post and go another cycle}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00075}00075                     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00076}00076                         \mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}index"{}}] +=1;}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00077}00077                         echo \$html\_printing;}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00078}00078                     \}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00079}00079                 \}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00080}00080                 \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00081}00081                     \mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}show\_button"{}}] = False;}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00082}00082                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00083}00083                 \}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00084}00084             \}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00085}00085         \}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00086}00086     \}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00087}00087 \}}
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{printing_8php_source_l00091}00091 ?>}
+
+\end{DoxyCode}

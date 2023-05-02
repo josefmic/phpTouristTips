@@ -1,0 +1,189 @@
+\hypertarget{city_8php}{}\doxysection{city.\+php File Reference}
+\label{city_8php}\index{city.php@{city.php}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{city_8php_a7a286ac6ab62f89d81f8cb151b4e9f4e}{if}}(isset(\$\+\_\+\+GET\mbox{[}\char`\"{}city\char`\"{}\mbox{]}) and !empty(\$\+\_\+\+GET\mbox{[}\char`\"{}city\char`\"{}\mbox{]})) \mbox{\hyperlink{city_8php_ad07b4e1bbbf62a8ef697b809625292ef}{else}}
+\item 
+\mbox{\hyperlink{city_8php_a00ae4fcafb1145f5e968bdf920f83e2e}{\$token}} = bin2hex(random\+\_\+bytes(32))
+\item 
+\mbox{\hyperlink{city_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\+\_\+\+SESSION}} \mbox{[}\char`\"{}csrf\+\_\+token\char`\"{}\mbox{]} = \$token
+\item 
+\mbox{\hyperlink{city_8php_a7a286ac6ab62f89d81f8cb151b4e9f4e}{if}} (isset( \$\+\_\+\+SESSION\mbox{[}\char`\"{}username\char`\"{}\mbox{]}))
+\item 
+\mbox{\hyperlink{city_8php_ac765c9e71bf9bfe8478f3527eeb33d4b}{\$\+\_\+\+SESSION}} \mbox{[}\char`\"{}is\+\_\+city\char`\"{}\mbox{]} = True
+\item 
+\mbox{\hyperlink{city_8php_abb0e83f80ef3d030c05b35eb1f450e05}{\$\+\_\+\+SESSION}} \mbox{[}\char`\"{}isadmin\char`\"{}\mbox{]} = False
+\item 
+\mbox{\hyperlink{city_8php_abbc5c7e387d22501e61eb65be93b58b4}{\$\+\_\+\+SESSION}} \mbox{[}\char`\"{}author\char`\"{}\mbox{]} = False
+\item 
+\mbox{\hyperlink{city_8php_a5544c56adf8c15344b47edef117c966c}{\$adress}} = \char`\"{}./scripts/login.\+php?city=\char`\"{}.\$active\+\_\+city
+\item 
+if(isset( \$\+\_\+\+SESSION\mbox{[}\char`\"{}doesnt\+\_\+exist\char`\"{}\mbox{]})) \mbox{\hyperlink{city_8php_aa405f47d27a0e4d151eab94f1f19b9a0}{if}} (isset( \$\+\_\+\+SESSION\mbox{[}\char`\"{}incorrect\+\_\+pass\char`\"{}\mbox{]}))
+\item 
+\mbox{\hyperlink{city_8php_aca99d2b9a2dabe2f9a09e8d14153807a}{\$city\+\_\+array}} = array\+\_\+reverse(json\+\_\+decode(file\+\_\+get\+\_\+contents(\char`\"{}./city\+\_\+tips/city\+\_\+tips.\+json\char`\"{}))-\/$>$\$active\+\_\+city)
+\item 
+\mbox{\hyperlink{city_8php_a7a286ac6ab62f89d81f8cb151b4e9f4e}{if}}(\$\+\_\+\+SESSION\mbox{[}\char`\"{}show\+\_\+button\char`\"{}\mbox{]}) \mbox{\hyperlink{city_8php_a4ae8e0579d99564079242df0d566b799}{\$\+\_\+\+SESSION}} \mbox{[}\char`\"{}incorrect\+\_\+pass\char`\"{}\mbox{]} = NULL
+\item 
+\mbox{\hyperlink{city_8php_a5dde990e8c2cff5cc86c4b1e34bda340}{\$\+\_\+\+SESSION}} \mbox{[}\char`\"{}doesnt\+\_\+exist\char`\"{}\mbox{]} = NULL
+\item 
+\mbox{\hyperlink{city_8php_aa337a66f30292a143fca04e96af48e0b}{\$\+\_\+\+SESSION}} \mbox{[}\char`\"{}login-\/value\char`\"{}\mbox{]} = NULL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{city_8php_abbc5c7e387d22501e61eb65be93b58b4}\label{city_8php_abbc5c7e387d22501e61eb65be93b58b4}} 
+\index{city.php@{city.php}!\$\_SESSION@{\$\_SESSION}}
+\index{\$\_SESSION@{\$\_SESSION}!city.php@{city.php}}
+\doxysubsubsection{\texorpdfstring{\$\_SESSION}{$\_SESSION}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily \$\+\_\+\+SESSION\mbox{[}\char`\"{}author\char`\"{}\mbox{]} = False}
+
+
+
+Definition at line \mbox{\hyperlink{city_8php_source_l00042}{42}} of file \mbox{\hyperlink{city_8php_source}{city.\+php}}.
+
+\mbox{\Hypertarget{city_8php_ab26a8408ecd4d794f9d1b512227be029}\label{city_8php_ab26a8408ecd4d794f9d1b512227be029}} 
+\index{city.php@{city.php}!\$\_SESSION@{\$\_SESSION}}
+\index{\$\_SESSION@{\$\_SESSION}!city.php@{city.php}}
+\doxysubsubsection{\texorpdfstring{\$\_SESSION}{$\_SESSION}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily \$\+\_\+\+SESSION\mbox{[}\char`\"{}csrf\+\_\+token\char`\"{}\mbox{]} = \$token}
+
+
+
+Definition at line \mbox{\hyperlink{city_8php_source_l00026}{26}} of file \mbox{\hyperlink{city_8php_source}{city.\+php}}.
+
+\mbox{\Hypertarget{city_8php_a5dde990e8c2cff5cc86c4b1e34bda340}\label{city_8php_a5dde990e8c2cff5cc86c4b1e34bda340}} 
+\index{city.php@{city.php}!\$\_SESSION@{\$\_SESSION}}
+\index{\$\_SESSION@{\$\_SESSION}!city.php@{city.php}}
+\doxysubsubsection{\texorpdfstring{\$\_SESSION}{$\_SESSION}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily \$\+\_\+\+SESSION\mbox{[}\char`\"{}doesnt\+\_\+exist\char`\"{}\mbox{]} = NULL}
+
+
+
+Definition at line \mbox{\hyperlink{city_8php_source_l00164}{164}} of file \mbox{\hyperlink{city_8php_source}{city.\+php}}.
+
+\mbox{\Hypertarget{city_8php_a4ae8e0579d99564079242df0d566b799}\label{city_8php_a4ae8e0579d99564079242df0d566b799}} 
+\index{city.php@{city.php}!\$\_SESSION@{\$\_SESSION}}
+\index{\$\_SESSION@{\$\_SESSION}!city.php@{city.php}}
+\doxysubsubsection{\texorpdfstring{\$\_SESSION}{$\_SESSION}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{city_8php_a7a286ac6ab62f89d81f8cb151b4e9f4e}{if}} ( \$\+\_\+\+SESSION\mbox{[}\char`\"{}show\+\_\+button\char`\"{}\mbox{]}) \$\+\_\+\+SESSION\mbox{[}\char`\"{}incorrect\+\_\+pass\char`\"{}\mbox{]} = NULL}
+
+
+
+Definition at line \mbox{\hyperlink{city_8php_source_l00163}{163}} of file \mbox{\hyperlink{city_8php_source}{city.\+php}}.
+
+\mbox{\Hypertarget{city_8php_ac765c9e71bf9bfe8478f3527eeb33d4b}\label{city_8php_ac765c9e71bf9bfe8478f3527eeb33d4b}} 
+\index{city.php@{city.php}!\$\_SESSION@{\$\_SESSION}}
+\index{\$\_SESSION@{\$\_SESSION}!city.php@{city.php}}
+\doxysubsubsection{\texorpdfstring{\$\_SESSION}{$\_SESSION}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily \$\+\_\+\+SESSION\mbox{[}\char`\"{}is\+\_\+city\char`\"{}\mbox{]} = True}
+
+
+
+Definition at line \mbox{\hyperlink{city_8php_source_l00040}{40}} of file \mbox{\hyperlink{city_8php_source}{city.\+php}}.
+
+\mbox{\Hypertarget{city_8php_abb0e83f80ef3d030c05b35eb1f450e05}\label{city_8php_abb0e83f80ef3d030c05b35eb1f450e05}} 
+\index{city.php@{city.php}!\$\_SESSION@{\$\_SESSION}}
+\index{\$\_SESSION@{\$\_SESSION}!city.php@{city.php}}
+\doxysubsubsection{\texorpdfstring{\$\_SESSION}{$\_SESSION}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily \$\+\_\+\+SESSION\mbox{[}\char`\"{}isadmin\char`\"{}\mbox{]} = False}
+
+
+
+Definition at line \mbox{\hyperlink{city_8php_source_l00041}{41}} of file \mbox{\hyperlink{city_8php_source}{city.\+php}}.
+
+\mbox{\Hypertarget{city_8php_aa337a66f30292a143fca04e96af48e0b}\label{city_8php_aa337a66f30292a143fca04e96af48e0b}} 
+\index{city.php@{city.php}!\$\_SESSION@{\$\_SESSION}}
+\index{\$\_SESSION@{\$\_SESSION}!city.php@{city.php}}
+\doxysubsubsection{\texorpdfstring{\$\_SESSION}{$\_SESSION}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily \$\+\_\+\+SESSION\mbox{[}\char`\"{}login-\/value\char`\"{}\mbox{]} = NULL}
+
+
+
+Definition at line \mbox{\hyperlink{city_8php_source_l00165}{165}} of file \mbox{\hyperlink{city_8php_source}{city.\+php}}.
+
+\mbox{\Hypertarget{city_8php_a5544c56adf8c15344b47edef117c966c}\label{city_8php_a5544c56adf8c15344b47edef117c966c}} 
+\index{city.php@{city.php}!\$adress@{\$adress}}
+\index{\$adress@{\$adress}!city.php@{city.php}}
+\doxysubsubsection{\texorpdfstring{\$adress}{$adress}}
+{\footnotesize\ttfamily \$adress = \char`\"{}./scripts/login.\+php?city=\char`\"{}.\$active\+\_\+city}
+
+
+
+Definition at line \mbox{\hyperlink{city_8php_source_l00072}{72}} of file \mbox{\hyperlink{city_8php_source}{city.\+php}}.
+
+\mbox{\Hypertarget{city_8php_aca99d2b9a2dabe2f9a09e8d14153807a}\label{city_8php_aca99d2b9a2dabe2f9a09e8d14153807a}} 
+\index{city.php@{city.php}!\$city\_array@{\$city\_array}}
+\index{\$city\_array@{\$city\_array}!city.php@{city.php}}
+\doxysubsubsection{\texorpdfstring{\$city\_array}{$city\_array}}
+{\footnotesize\ttfamily \$city\+\_\+array = array\+\_\+reverse(json\+\_\+decode(file\+\_\+get\+\_\+contents(\char`\"{}./city\+\_\+tips/city\+\_\+tips.\+json\char`\"{}))-\/$>$\$active\+\_\+city)}
+
+
+
+Definition at line \mbox{\hyperlink{city_8php_source_l00132}{132}} of file \mbox{\hyperlink{city_8php_source}{city.\+php}}.
+
+\mbox{\Hypertarget{city_8php_a00ae4fcafb1145f5e968bdf920f83e2e}\label{city_8php_a00ae4fcafb1145f5e968bdf920f83e2e}} 
+\index{city.php@{city.php}!\$token@{\$token}}
+\index{\$token@{\$token}!city.php@{city.php}}
+\doxysubsubsection{\texorpdfstring{\$token}{$token}}
+{\footnotesize\ttfamily \$token = bin2hex(random\+\_\+bytes(32))}
+
+
+
+Definition at line \mbox{\hyperlink{city_8php_source_l00025}{25}} of file \mbox{\hyperlink{city_8php_source}{city.\+php}}.
+
+\mbox{\Hypertarget{city_8php_ad07b4e1bbbf62a8ef697b809625292ef}\label{city_8php_ad07b4e1bbbf62a8ef697b809625292ef}} 
+\index{city.php@{city.php}!else@{else}}
+\index{else@{else}!city.php@{city.php}}
+\doxysubsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily \mbox{\hyperlink{city_8php_a7a286ac6ab62f89d81f8cb151b4e9f4e}{if}} (isset( \$\+\_\+\+POST\mbox{[}\char`\"{}oldest\char`\"{}\mbox{]})) else}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (isset(\mbox{\hyperlink{city_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}username"{}}])) \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} ((\mbox{\hyperlink{city_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}username"{}}]) != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{            header(\textcolor{stringliteral}{"{}Location: ./logged\_index.php"{}});}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{            header(\textcolor{stringliteral}{"{}Location: ./index.php"{}});}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{        header(\textcolor{stringliteral}{"{}Location: ./index.php"{}});}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{city_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}city"{}}] = \$active\_city}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{city_8php_source_l00008}{8}} of file \mbox{\hyperlink{city_8php_source}{city.\+php}}.
+
+\mbox{\Hypertarget{city_8php_aa405f47d27a0e4d151eab94f1f19b9a0}\label{city_8php_aa405f47d27a0e4d151eab94f1f19b9a0}} 
+\index{city.php@{city.php}!if@{if}}
+\index{if@{if}!city.php@{city.php}}
+\doxysubsubsection{\texorpdfstring{if}{if}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily if(isset(\$\+\_\+\+SESSION\mbox{[}\char`\"{}doesnt\+\_\+exist\char`\"{}\mbox{]})) if(isset(\$\+\_\+\+SESSION\mbox{[}\char`\"{}incorrect\+\_\+pass\char`\"{}\mbox{]})) (\begin{DoxyParamCaption}\item[{isset( \$\+\_\+\+SESSION\mbox{[}\char`\"{}incorrect\+\_\+pass\char`\"{}\mbox{]})}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{city_8php_source_l00096}{96}} of file \mbox{\hyperlink{city_8php_source}{city.\+php}}.
+
+\mbox{\Hypertarget{city_8php_a7a286ac6ab62f89d81f8cb151b4e9f4e}\label{city_8php_a7a286ac6ab62f89d81f8cb151b4e9f4e}} 
+\index{city.php@{city.php}!if@{if}}
+\index{if@{if}!city.php@{city.php}}
+\doxysubsubsection{\texorpdfstring{if}{if}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily if (\begin{DoxyParamCaption}\item[{isset( \$\+\_\+\+SESSION\mbox{[}\char`\"{}username\char`\"{}\mbox{]})}]{ }\end{DoxyParamCaption})}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{        echo \textcolor{stringliteral}{"{}<link rel='stylesheet' href='./styles/index\_styles.css' type='text/css'>"{}}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{city_8php_source_l00030}{30}} of file \mbox{\hyperlink{city_8php_source}{city.\+php}}.
+

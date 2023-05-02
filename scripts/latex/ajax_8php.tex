@@ -1,0 +1,78 @@
+\hypertarget{ajax_8php}{}\doxysection{ajax.\+php File Reference}
+\label{ajax_8php}\index{ajax.php@{ajax.php}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+if(isset( \$\+\_\+\+SESSION\mbox{[}\char`\"{}filter\char`\"{}\mbox{]})) \mbox{\hyperlink{ajax_8php_a14d5d352bc5abe6120c41ade894f2b5b}{print\+\_\+posts}} (\$city\+\_\+array)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+if(isset(\$\+\_\+\+SESSION\mbox{[}\char`\"{}city\char`\"{}\mbox{]})) \mbox{\hyperlink{ajax_8php_aa9b3b6fac2af158c1c598638597a79be}{else}}
+\item 
+\mbox{\hyperlink{ajax_8php_a5cfa743dab82b885b1d2e8114d4e1017}{\$existing\+\_\+posts}} = json\+\_\+decode(file\+\_\+get\+\_\+contents(\char`\"{}../city\+\_\+tips/city\+\_\+tips.\+json\char`\"{}))
+\item 
+foreach(\$existing\+\_\+posts as \$city) \mbox{\hyperlink{ajax_8php_a110f01b4c920895fc1620b669f8521d0}{\$city\+\_\+array}} = array\+\_\+reverse(\$city\+\_\+array)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ajax_8php_a14d5d352bc5abe6120c41ade894f2b5b}\label{ajax_8php_a14d5d352bc5abe6120c41ade894f2b5b}} 
+\index{ajax.php@{ajax.php}!print\_posts@{print\_posts}}
+\index{print\_posts@{print\_posts}!ajax.php@{ajax.php}}
+\doxysubsubsection{\texorpdfstring{print\_posts()}{print\_posts()}}
+{\footnotesize\ttfamily if(isset(\$\+\_\+\+SESSION\mbox{[}\char`\"{}filter\char`\"{}\mbox{]})) print\+\_\+posts (\begin{DoxyParamCaption}\item[{}]{\$city\+\_\+array }\end{DoxyParamCaption})}
+
+Function to print 5 more posts print\+\_\+posts
+
+
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$city\+\_\+array} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ajax_8php_source_l00038}{38}} of file \mbox{\hyperlink{ajax_8php_source}{ajax.\+php}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{ajax_8php_a110f01b4c920895fc1620b669f8521d0}\label{ajax_8php_a110f01b4c920895fc1620b669f8521d0}} 
+\index{ajax.php@{ajax.php}!\$city\_array@{\$city\_array}}
+\index{\$city\_array@{\$city\_array}!ajax.php@{ajax.php}}
+\doxysubsubsection{\texorpdfstring{\$city\_array}{$city\_array}}
+{\footnotesize\ttfamily foreach ( \$existing\+\_\+posts as \$city) \$city\+\_\+array = array\+\_\+reverse(\$city\+\_\+array)}
+
+
+
+Definition at line \mbox{\hyperlink{ajax_8php_source_l00021}{21}} of file \mbox{\hyperlink{ajax_8php_source}{ajax.\+php}}.
+
+\mbox{\Hypertarget{ajax_8php_a5cfa743dab82b885b1d2e8114d4e1017}\label{ajax_8php_a5cfa743dab82b885b1d2e8114d4e1017}} 
+\index{ajax.php@{ajax.php}!\$existing\_posts@{\$existing\_posts}}
+\index{\$existing\_posts@{\$existing\_posts}!ajax.php@{ajax.php}}
+\doxysubsubsection{\texorpdfstring{\$existing\_posts}{$existing\_posts}}
+{\footnotesize\ttfamily \$existing\+\_\+posts = json\+\_\+decode(file\+\_\+get\+\_\+contents(\char`\"{}../city\+\_\+tips/city\+\_\+tips.\+json\char`\"{}))}
+
+
+
+Definition at line \mbox{\hyperlink{ajax_8php_source_l00012}{12}} of file \mbox{\hyperlink{ajax_8php_source}{ajax.\+php}}.
+
+\mbox{\Hypertarget{ajax_8php_aa9b3b6fac2af158c1c598638597a79be}\label{ajax_8php_aa9b3b6fac2af158c1c598638597a79be}} 
+\index{ajax.php@{ajax.php}!else@{else}}
+\index{else@{else}!ajax.php@{ajax.php}}
+\doxysubsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily if (isset( \$\+\_\+\+SESSION\mbox{[}\char`\"{}city\char`\"{}\mbox{]})) else}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \mbox{\hyperlink{ajax_8php_a110f01b4c920895fc1620b669f8521d0}{\$city\_array}} = array()}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{ajax_8php_source_l00009}{9}} of file \mbox{\hyperlink{ajax_8php_source}{ajax.\+php}}.
+

@@ -1,0 +1,149 @@
+\hypertarget{index_8php_source}{}\doxysection{index.\+php}
+\mbox{\hyperlink{index_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00001}00001 <?php}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00002}00002     session\_start();}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00003}00003     \textcolor{comment}{//Check if is logged in, if so, go to logged in page}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00004}00004     \textcolor{keywordflow}{if} (isset(\mbox{\hyperlink{index_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}username"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00005}00005         \textcolor{keywordflow}{if} ((\mbox{\hyperlink{index_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}username"{}}]) != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00006}00006             header(\textcolor{stringliteral}{"{}Location: ./logged\_index.php"{}});}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00007}00007         \}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00008}00008     \}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00009}00009     \textcolor{comment}{//Create a csrf token}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00010}\mbox{\hyperlink{index_8php_a0fb1781557d30c7891008bac521b8848}{00010}}     \mbox{\hyperlink{index_8php_a0fb1781557d30c7891008bac521b8848}{\$token}} = bin2hex(random\_bytes(32));}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00011}\mbox{\hyperlink{index_8php_ab26a8408ecd4d794f9d1b512227be029}{00011}}     \mbox{\hyperlink{index_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}csrf\_token"{}}] = \mbox{\hyperlink{index_8php_a0fb1781557d30c7891008bac521b8848}{\$token}};}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00013}00013     \textcolor{comment}{//Set proper session values}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00014}\mbox{\hyperlink{index_8php_a97c93926ac4f4bf9db8d38d03478c1a6}{00014}}     \mbox{\hyperlink{index_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}city"{}}] = NULL;}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00015}\mbox{\hyperlink{index_8php_ac765c9e71bf9bfe8478f3527eeb33d4b}{00015}}     \mbox{\hyperlink{index_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}is\_city"{}}] = False;}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00016}\mbox{\hyperlink{index_8php_adcd67e50e6a3ebaf82968327029daf18}{00016}}     \mbox{\hyperlink{index_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}show\_button"{}}] = False;}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00017}\mbox{\hyperlink{index_8php_abbc5c7e387d22501e61eb65be93b58b4}{00017}}     \mbox{\hyperlink{index_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}author"{}}] = False;}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00018}00018 ?>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00019}00019 <!DOCTYPE html>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00020}00020 <html lang=\textcolor{stringliteral}{"{}en"{}}>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00021}00021 <head>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00022}00022     <title>Tourist tips</title>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00023}00023     <meta charset=\textcolor{stringliteral}{"{}utf-\/8"{}}>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00024}00024     <meta name=\textcolor{stringliteral}{"{}viewport"{}} content=\textcolor{stringliteral}{"{}width=device-\/width, initial-\/scale=1"{}}>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00025}00025     <script src=\textcolor{stringliteral}{"{}./scripts/validation.js"{}}></script>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00026}00026     <?php}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00027}00027     \textcolor{comment}{//Apply the colorblind skin based on a user cookie}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00028}00028     \textcolor{keywordflow}{if} (isset(\$\_COOKIE[\textcolor{stringliteral}{"{}colorblind"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00029}00029         \textcolor{keywordflow}{if} (\$\_COOKIE[\textcolor{stringliteral}{"{}colorblind"{}}] == \textcolor{stringliteral}{"{}true"{}}) \{}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00030}00030             echo \textcolor{stringliteral}{"{}<link rel='stylesheet' href='./styles/index\_styles\_colorblind.css' type='text/css'>"{}};}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00031}00031         \}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00032}00032         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00033}00033             echo \textcolor{stringliteral}{"{}<link rel='stylesheet' href='./styles/index\_styles.css' type='text/css'>"{}};}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00034}00034         \}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00035}00035     \}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00036}\mbox{\hyperlink{index_8php_accea5ecb7403cfcdc0aaa5f99bc53a2b}{00036}}     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00037}00037         echo \textcolor{stringliteral}{"{}<link rel='stylesheet' href='./styles/index\_styles.css' type='text/css'>"{}};}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00038}00038     \}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00039}00039     ?>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00040}00040 </head>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00041}00041 <body>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00042}00042     <header \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}sidebar"{}}>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00043}00043         <h2><a href=\textcolor{stringliteral}{"{}./index.php"{}} \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}title"{}}>Tourist tips.</a></h2>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00044}00044         <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}menu\_list"{}}>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00045}00045             <form method=\textcolor{stringliteral}{"{}post"{}} action=\textcolor{stringliteral}{"{}./scripts/login.php"{}} \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}menu\_list"{}}>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00046}00046                 <?php}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00047}00047                 \textcolor{comment}{//Make sure the form is filled after sending invalid form}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00048}00048                 \textcolor{keywordflow}{if} (isset(\mbox{\hyperlink{index_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{'login-\/value'}])) \{}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00049}00049                     echo \textcolor{stringliteral}{"{}<input id='username' type='text' name='username' class='login\_form username\_form' placeholder='Username' aria-\/label='Username' required value="{}}.\$\_SESSION[\textcolor{stringliteral}{'login-\/value'}].\textcolor{stringliteral}{"{}>"{}};}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00050}00050                 \}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00051}00051                 \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00052}00052                     echo \textcolor{stringliteral}{"{}<input id='username' type='text' name='username' class='login\_form username\_form' placeholder='Username' aria-\/label='Username' required value=''>"{}};}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00053}00053                 \}           }
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00054}00054                 ?>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00055}00055                 <?php}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00056}00056                 \textcolor{comment}{//Print error message if it exists}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00057}00057                 \textcolor{keywordflow}{if} (isset(\mbox{\hyperlink{index_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}doesnt\_exist"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00058}00058                     echo \textcolor{stringliteral}{"{}<p class='php-\/errors'>"{}}.\$\_SESSION[\textcolor{stringliteral}{"{}doesnt\_exist"{}}].\textcolor{stringliteral}{"{}</p>"{}};}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00059}00059                 \}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00060}00060                 ?>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00061}00061                 <p \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}error username\_error"{}}></p>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00063}00063                 <input \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}password"{}} type=\textcolor{stringliteral}{"{}password"{}} name=\textcolor{stringliteral}{"{}password"{}} \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}login\_form"{}} placeholder=\textcolor{stringliteral}{"{}Password"{}} aria-\/label=\textcolor{stringliteral}{"{}Password"{}} required>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00064}00064                 <?php}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00065}00065                     \textcolor{comment}{//Print incorrect password message}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00066}\mbox{\hyperlink{index_8php_aa405f47d27a0e4d151eab94f1f19b9a0}{00066}}                     \textcolor{keywordflow}{if} (isset(\mbox{\hyperlink{index_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}incorrect\_pass"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00067}00067                         echo \textcolor{stringliteral}{"{}<p class='php-\/errors'>"{}}.\$\_SESSION[\textcolor{stringliteral}{"{}incorrect\_pass"{}}].\textcolor{stringliteral}{"{}</p>"{}};}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00068}00068                     \}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00069}00069                     ?>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00071}00071                     <p \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}error password\_error"{}}></p>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00073}00073                 <!-\/-\/ Send the csrf token along with the page -\/-\/>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00074}00074                 <input type=\textcolor{stringliteral}{"{}hidden"{}} name=\textcolor{stringliteral}{"{}csrf\_token"{}} value=\textcolor{stringliteral}{"{}<?php echo \$token; ?>"{}}>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00075}00075                 <button type=\textcolor{stringliteral}{"{}submit"{}} name = \textcolor{stringliteral}{"{}submit"{}} \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}login\_button"{}}>Login</button>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00076}00076                 <a \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}register\_button"{}} href=\textcolor{stringliteral}{"{}./register.php"{}}>Register</a>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00077}00077             </form>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00078}00078             <!-\/-\/ Call validation javascript \textcolor{keyword}{function} -\/-\/>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00079}00079             <script>login\_init();</script>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00080}00080         </div>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00081}00081         <form method=\textcolor{stringliteral}{"{}post"{}} action=\textcolor{stringliteral}{"{}./scripts/colorblind.php"{}}>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00082}00082             <button name=\textcolor{stringliteral}{"{}colorblind"{}} \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}colorblind"{}} \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}colorblind"{}}></button>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00083}00083         </form>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00084}00084     </header>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00086}00086     <!-\/-\/ City buttons -\/-\/>}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00087}00087     <div \textcolor{keyword}{class }= "{}buttons\textcolor{stringliteral}{"{}>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00088}00088 \textcolor{stringliteral}{        <form method="{}}post\textcolor{stringliteral}{"{} action="{}}city.php?city=London\textcolor{stringliteral}{"{}>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00089}00089 \textcolor{stringliteral}{            <button class="{}}city\_london city\_buttons\textcolor{stringliteral}{"{} name = "{}}London\textcolor{stringliteral}{"{}>LONDON</button>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00090}00090 \textcolor{stringliteral}{        </form>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00091}00091 \textcolor{stringliteral}{        <form method="{}}post\textcolor{stringliteral}{"{} action="{}}city.php?city=Paris\textcolor{stringliteral}{"{} >}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00092}00092 \textcolor{stringliteral}{            <button class="{}}city\_paris city\_buttons\textcolor{stringliteral}{"{} name = "{}}Paris\textcolor{stringliteral}{"{}>PARIS</button>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00093}00093 \textcolor{stringliteral}{        </form>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00094}00094 \textcolor{stringliteral}{        <form method="{}}post\textcolor{stringliteral}{"{} action="{}}city.php?city=Istanbul\textcolor{stringliteral}{"{} >}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00095}00095 \textcolor{stringliteral}{            <button class="{}}city\_istanbul city\_buttons\textcolor{stringliteral}{"{} name = "{}}Istanbul\textcolor{stringliteral}{"{}>ISTANBUL</button>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00096}00096 \textcolor{stringliteral}{        </form>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00097}00097 \textcolor{stringliteral}{        <form method="{}}post\textcolor{stringliteral}{"{} action="{}}city.php?city=Rome\textcolor{stringliteral}{"{} >}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00098}00098 \textcolor{stringliteral}{            <button class="{}}city\_rome city\_buttons\textcolor{stringliteral}{"{} name = "{}}Rome\textcolor{stringliteral}{"{}>ROME</button>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00099}00099 \textcolor{stringliteral}{        </form>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00100}00100 \textcolor{stringliteral}{        <form method="{}}post\textcolor{stringliteral}{"{} action="{}}city.php?city=Amsterdam\textcolor{stringliteral}{"{} >}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00101}00101 \textcolor{stringliteral}{            <button class="{}}city\_amsterdam city\_buttons\textcolor{stringliteral}{"{} name = "{}}Amsterdam\textcolor{stringliteral}{"{}>AMSTERDAM</button>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00102}00102 \textcolor{stringliteral}{        </form>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00103}00103 \textcolor{stringliteral}{        <form method="{}}post\textcolor{stringliteral}{"{} action="{}}city.php?city=Barcelona\textcolor{stringliteral}{"{} >}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00104}00104 \textcolor{stringliteral}{            <button class="{}}city\_barcelona city\_buttons\textcolor{stringliteral}{"{} name = "{}}Barcelona\textcolor{stringliteral}{"{}>BARCELONA</button>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00105}00105 \textcolor{stringliteral}{        </form>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00106}00106 \textcolor{stringliteral}{        <form method="{}}post\textcolor{stringliteral}{"{} action="{}}city.php?city=Prague\textcolor{stringliteral}{"{} >}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00107}00107 \textcolor{stringliteral}{            <button class="{}}city\_prague city\_buttons\textcolor{stringliteral}{"{} name = "{}}Prague\textcolor{stringliteral}{"{}>PRAGUE</button>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00108}00108 \textcolor{stringliteral}{        </form>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00109}00109 \textcolor{stringliteral}{        <form method="{}}post\textcolor{stringliteral}{"{} action="{}}city.php?city=Vienna\textcolor{stringliteral}{"{} >}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00110}00110 \textcolor{stringliteral}{            <button class="{}}city\_vienna city\_buttons\textcolor{stringliteral}{"{} name = "{}}Vienna\textcolor{stringliteral}{"{}>VIENNA</button>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00111}00111 \textcolor{stringliteral}{        </form>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00112}00112 \textcolor{stringliteral}{        <form method="{}}post\textcolor{stringliteral}{"{} action="{}}city.php?city=Milan\textcolor{stringliteral}{"{} >}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00113}00113 \textcolor{stringliteral}{            <button class="{}}city\_milan city\_buttons\textcolor{stringliteral}{"{} name = "{}}Milan\textcolor{stringliteral}{"{}>MILAN</button>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00114}00114 \textcolor{stringliteral}{        </form>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00115}00115 \textcolor{stringliteral}{        <form method="{}}post\textcolor{stringliteral}{"{} action="{}}city.php?city=Athens\textcolor{stringliteral}{"{} >}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00116}00116 \textcolor{stringliteral}{            <button class="{}}city\_athens city\_buttons\textcolor{stringliteral}{"{} name = "{}}Athens\textcolor{stringliteral}{"{}>ATHENS</button>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00117}00117 \textcolor{stringliteral}{        </form>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00118}00118 \textcolor{stringliteral}{        <form method="{}}post\textcolor{stringliteral}{"{} action="{}}city.php?city=Berlin\textcolor{stringliteral}{"{} >}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00119}00119 \textcolor{stringliteral}{            <button class="{}}city\_berlin city\_buttons\textcolor{stringliteral}{"{} name = "{}}Berlin\textcolor{stringliteral}{"{}>BERLIN</button>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00120}00120 \textcolor{stringliteral}{        </form>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00121}00121 \textcolor{stringliteral}{        <form method="{}}post\textcolor{stringliteral}{"{} action="{}}city.php?city=Moscow\textcolor{stringliteral}{"{} >}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00122}00122 \textcolor{stringliteral}{            <button class="{}}city\_moscow city\_buttons\textcolor{stringliteral}{"{} name = "{}}Moscow\textcolor{stringliteral}{"{}>MOSCOW</button>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00123}00123 \textcolor{stringliteral}{        </form>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00124}00124 \textcolor{stringliteral}{        <form method="{}}post\textcolor{stringliteral}{"{} action="{}}city.php?city=Venice\textcolor{stringliteral}{"{} >}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00125}00125 \textcolor{stringliteral}{            <button class="{}}city\_venice city\_buttons\textcolor{stringliteral}{"{} name = "{}}Venice\textcolor{stringliteral}{"{}>VENICE</button>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00126}00126 \textcolor{stringliteral}{        </form>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00127}00127 \textcolor{stringliteral}{        <form method="{}}post\textcolor{stringliteral}{"{} action="{}}city.php?city=Madrid\textcolor{stringliteral}{"{} >}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00128}00128 \textcolor{stringliteral}{            <button class="{}}city\_madrid city\_buttons\textcolor{stringliteral}{"{} name = "{}}Madrid\textcolor{stringliteral}{"{}>MADRID</button>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00129}00129 \textcolor{stringliteral}{        </form>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00130}00130 \textcolor{stringliteral}{        <form method="{}}post\textcolor{stringliteral}{"{} action="{}}city.php?city=Dublin\textcolor{stringliteral}{"{} >}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00131}00131 \textcolor{stringliteral}{            <button class="{}}city\_dublin city\_buttons\textcolor{stringliteral}{"{} name = "{}}Dublin\textcolor{stringliteral}{"{}>DUBLIN</button>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00132}00132 \textcolor{stringliteral}{        </form>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00133}00133 \textcolor{stringliteral}{        <form method="{}}post\textcolor{stringliteral}{"{} action="{}}city.php?city=Florence\textcolor{stringliteral}{"{} >}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00134}00134 \textcolor{stringliteral}{            <button class="{}}city\_florence city\_buttons\textcolor{stringliteral}{"{} name = "{}}Florence\textcolor{stringliteral}{"{}>FLORENCE</button>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00135}00135 \textcolor{stringliteral}{        </form>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00136}00136 \textcolor{stringliteral}{    </div>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00137}00137 \textcolor{stringliteral}{</body>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00138}00138 \textcolor{stringliteral}{<?php}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00139}00139 \textcolor{stringliteral}{//Again set the sessions to the correct values}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00140}\mbox{\hyperlink{index_8php_a217671c02b91d1e17507e3a13f4b9a3b}{00140}} \textcolor{stringliteral}{\$\_SESSION["{}}incorrect\_pass\textcolor{stringliteral}{"{}] = NULL;}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00141}\mbox{\hyperlink{index_8php_a5dde990e8c2cff5cc86c4b1e34bda340}{00141}} \textcolor{stringliteral}{\$\_SESSION["{}}doesnt\_exist\textcolor{stringliteral}{"{}] = NULL;}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00142}\mbox{\hyperlink{index_8php_aa337a66f30292a143fca04e96af48e0b}{00142}} \textcolor{stringliteral}{\$\_SESSION["{}}login-\/value\textcolor{stringliteral}{"{}] = NULL;}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00143}00143 \textcolor{stringliteral}{?>}}
+\DoxyCodeLine{\Hypertarget{index_8php_source_l00144}00144 \textcolor{stringliteral}{</html>}}
+
+\end{DoxyCode}

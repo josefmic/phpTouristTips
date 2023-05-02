@@ -1,0 +1,16 @@
+\hypertarget{logout_8php_source}{}\doxysection{logout.\+php}
+\mbox{\hyperlink{logout_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{logout_8php_source_l00001}00001 <?php}
+\DoxyCodeLine{\Hypertarget{logout_8php_source_l00002}00002 session\_start();}
+\DoxyCodeLine{\Hypertarget{logout_8php_source_l00003}00003 \textcolor{comment}{//Set all user values to the logged out values}}
+\DoxyCodeLine{\Hypertarget{logout_8php_source_l00004}\mbox{\hyperlink{logout_8php_abb0e83f80ef3d030c05b35eb1f450e05}{00004}} \mbox{\hyperlink{logout_8php_abb0e83f80ef3d030c05b35eb1f450e05}{\$\_SESSION}}[\textcolor{stringliteral}{"{}isadmin"{}}] = False;}
+\DoxyCodeLine{\Hypertarget{logout_8php_source_l00005}\mbox{\hyperlink{logout_8php_a561c7a803f5949abeb6de69226448ab8}{00005}} \mbox{\hyperlink{logout_8php_abb0e83f80ef3d030c05b35eb1f450e05}{\$\_SESSION}}[\textcolor{stringliteral}{"{}name"{}}] = NULL;}
+\DoxyCodeLine{\Hypertarget{logout_8php_source_l00006}\mbox{\hyperlink{logout_8php_ad593eb91f08d16d478120cb9b00a448f}{00006}} \mbox{\hyperlink{logout_8php_abb0e83f80ef3d030c05b35eb1f450e05}{\$\_SESSION}}[\textcolor{stringliteral}{"{}username"{}}] = NULL;}
+\DoxyCodeLine{\Hypertarget{logout_8php_source_l00007}\mbox{\hyperlink{logout_8php_abbc5c7e387d22501e61eb65be93b58b4}{00007}} \mbox{\hyperlink{logout_8php_abb0e83f80ef3d030c05b35eb1f450e05}{\$\_SESSION}}[\textcolor{stringliteral}{"{}author"{}}] = False;}
+\DoxyCodeLine{\Hypertarget{logout_8php_source_l00008}\mbox{\hyperlink{logout_8php_a3b467c5b7fe2d647b8e47205fde6fb0c}{00008}} \mbox{\hyperlink{logout_8php_abb0e83f80ef3d030c05b35eb1f450e05}{\$\_SESSION}}[\textcolor{stringliteral}{"{}ismypost"{}}] = False;}
+\DoxyCodeLine{\Hypertarget{logout_8php_source_l00009}00009 \textcolor{comment}{//Redirect the user}}
+\DoxyCodeLine{\Hypertarget{logout_8php_source_l00010}00010 header(\textcolor{stringliteral}{"{}Location: ../index.php"{}});}
+\DoxyCodeLine{\Hypertarget{logout_8php_source_l00011}00011 ?>}
+
+\end{DoxyCode}

@@ -1,0 +1,135 @@
+\hypertarget{register_8php_source}{}\doxysection{register.\+php}
+\mbox{\hyperlink{register_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00001}00001 <?php}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00002}00002 session\_start();}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00003}00003 \textcolor{comment}{//Create a csrf token}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00004}\mbox{\hyperlink{register_8php_a00ae4fcafb1145f5e968bdf920f83e2e}{00004}} \mbox{\hyperlink{register_8php_a00ae4fcafb1145f5e968bdf920f83e2e}{\$token}} = bin2hex(random\_bytes(32));}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00005}\mbox{\hyperlink{register_8php_ab26a8408ecd4d794f9d1b512227be029}{00005}} \mbox{\hyperlink{register_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}csrf\_token"{}}] = \mbox{\hyperlink{register_8php_a00ae4fcafb1145f5e968bdf920f83e2e}{\$token}};}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00006}00006 ?>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00007}00007 <!DOCTYPE html>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00008}00008 <html lang=\textcolor{stringliteral}{"{}en"{}}>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00009}00009 <head>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00010}00010     <title>Register</title>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00011}00011     <meta charset = \textcolor{stringliteral}{"{}utf-\/8"{}}>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00012}00012     <meta name=\textcolor{stringliteral}{"{}viewport"{}} content=\textcolor{stringliteral}{"{}width=device-\/width, initial-\/scale=1"{}}>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00013}00013     <script src=\textcolor{stringliteral}{"{}./scripts/validation.js"{}}></script>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00014}00014     <link rel=\textcolor{stringliteral}{"{}stylesheet"{}} type=\textcolor{stringliteral}{"{}text/css"{}} href=\textcolor{stringliteral}{"{}./styles/register.css"{}}>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00015}00015 </head>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00016}00016 <body>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00017}00017     <form method=\textcolor{stringliteral}{"{}post"{}} action=\textcolor{stringliteral}{"{}./scripts/register\_script.php"{}} \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}registration-\/input"{}}>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00018}00018         <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}register-\/page"{}}>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00019}00019             <label \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}register-\/label"{}}>*Name:}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00020}00020             <?php}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00021}00021                 \textcolor{comment}{//If the form submit was invalid, fill in the value}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00022}00022                 \textcolor{keywordflow}{if} (isset(\mbox{\hyperlink{register_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}name-\/value"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00023}00023                     echo \textcolor{stringliteral}{"{}<input id = 'name' name = 'name' class = 'register-\/form input' type = 'text'  placeholder = 'Name' required value="{}}.\$\_SESSION[\textcolor{stringliteral}{"{}name-\/value"{}}].\textcolor{stringliteral}{"{}>"{}};}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00024}00024                 \}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00025}\mbox{\hyperlink{register_8php_af952d81ceb7a24eb1f1478c3b3b3f12a}{00025}}                 \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00026}00026                     echo \textcolor{stringliteral}{"{}<input id = 'name' name = 'name' class = 'register-\/form input' type = 'text'  placeholder = 'Name' required value=''>"{}};}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00027}00027                 \}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00028}00028                 ?>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00029}00029             <?php}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00030}00030                 \textcolor{comment}{//Print out the name error}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00031}00031                 \textcolor{keywordflow}{if} (isset(\mbox{\hyperlink{register_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}name\_error"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00032}00032                     echo \textcolor{stringliteral}{"{}<p class='php-\/errors'>"{}}.\$\_SESSION[\textcolor{stringliteral}{"{}name\_error"{}}].\textcolor{stringliteral}{"{}</p>"{}};}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00033}00033                 \}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00034}00034             ?>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00035}00035             </label>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00036}00036             <p \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}error name\_error"{}}></p>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00038}00038             <label \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}register-\/label"{}}>*Username:}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00039}00039             <?php}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00040}00040                 \textcolor{comment}{//If the form submit was invalid, fill in the value}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00041}00041                 \textcolor{keywordflow}{if} (isset(\mbox{\hyperlink{register_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}username-\/value"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00042}00042                     echo \textcolor{stringliteral}{"{}<input id = 'username' name = 'username' class = 'register-\/form input' type = 'text'  placeholder = 'Username' required value="{}}.\$\_SESSION[\textcolor{stringliteral}{"{}username-\/value"{}}].\textcolor{stringliteral}{"{}>"{}};}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00043}00043                 \}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00044}00044                 \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00045}00045                     echo \textcolor{stringliteral}{"{}<input id = 'username' name = 'username' class = 'register-\/form input' type = 'text'  placeholder = 'Username' required value=''>"{}};}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00046}00046                 \}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00047}00047             ?>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00048}00048             <?php}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00049}00049                 \textcolor{comment}{//Print username error}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00050}00050                 \textcolor{keywordflow}{if} (isset(\mbox{\hyperlink{register_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}username\_error"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00051}00051                     echo \textcolor{stringliteral}{"{}<p class='php-\/errors'>"{}}.\$\_SESSION[\textcolor{stringliteral}{"{}username\_error"{}}].\textcolor{stringliteral}{"{}</p>"{}};}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00052}00052                 \}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00053}00053             ?>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00054}00054             </label>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00055}00055             <p \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}error username\_error"{}}></p>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00057}00057             <label \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}register-\/label"{}}>*Email:}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00058}00058             <?php}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00059}00059                 \textcolor{comment}{//If the form submit was invalid, fill in the value}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00060}00060                 \textcolor{keywordflow}{if} (isset(\mbox{\hyperlink{register_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}email-\/value"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00061}00061                     echo \textcolor{stringliteral}{"{}<input id='email' name = 'email' class = 'register-\/form input' type = 'email'  placeholder = 'Email' required value="{}}.\$\_SESSION[\textcolor{stringliteral}{"{}email-\/value"{}}].\textcolor{stringliteral}{"{}>"{}};}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00062}00062                 \}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00063}00063                 \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00064}00064                     echo \textcolor{stringliteral}{"{}<input id='email' name = 'email' class = 'register-\/form input' type = 'email'  placeholder = 'Email' required value=''>"{}};}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00065}00065                 \}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00066}00066             ?>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00067}00067             <?php}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00068}00068                 \textcolor{comment}{//Print email error}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00069}00069                 \textcolor{keywordflow}{if} (isset(\mbox{\hyperlink{register_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}email\_error"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00070}00070                     echo \textcolor{stringliteral}{"{}<p class='php-\/errors'>"{}}.\$\_SESSION[\textcolor{stringliteral}{"{}email\_error"{}}].\textcolor{stringliteral}{"{}</p>"{}};}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00071}00071                 \}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00072}00072             ?>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00073}00073             </label>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00074}00074             <p \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}error email\_error"{}}></p>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00075}00075             }
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00076}00076             <label \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}register-\/label"{}}>*Password: (At least 8 long, one uppercase, one lowercase)}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00077}00077             <input \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"{}password"{}} name = \textcolor{stringliteral}{"{}password"{}} \textcolor{keyword}{class} = \textcolor{stringliteral}{"{}register-\/form input"{}} type = \textcolor{stringliteral}{"{}password"{}}   placeholder = \textcolor{stringliteral}{"{}Password"{}} required pattern=\textcolor{stringliteral}{"{}(?=.*\(\backslash\)d)(?=.*[a-\/z])(?=.*[A-\/Z]).\{8,\}"{}}>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00078}00078             <?php}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00079}00079                 \textcolor{comment}{//Print password error}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00080}00080                 \textcolor{keywordflow}{if} (isset(\mbox{\hyperlink{register_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}password\_error"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00081}00081                     echo \textcolor{stringliteral}{"{}<p class='php-\/errors'>"{}}.\$\_SESSION[\textcolor{stringliteral}{"{}password\_error"{}}].\textcolor{stringliteral}{"{}</p>"{}};}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00082}00082                 \}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00083}00083             ?>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00084}00084             </label>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00085}00085             <p \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}error password\_error"{}}></p>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00087}00087             <label \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}register-\/label"{}}>*Date of birth}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00088}00088             <?php}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00089}00089                 \textcolor{comment}{//If the form submit was invalid, fill in the value}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00090}00090                 \textcolor{keywordflow}{if} (isset(\mbox{\hyperlink{register_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}birth-\/value"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00091}00091                     echo \textcolor{stringliteral}{"{}<input id='birth' name = 'birth' class = 'birth-\/input input' type ='date' required value="{}}.\$\_SESSION[\textcolor{stringliteral}{"{}birth-\/value"{}}].\textcolor{stringliteral}{"{}>"{}};}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00092}00092                 \}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00093}00093                 \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00094}00094                     echo \textcolor{stringliteral}{"{}<input id='birth' name = 'birth' class = 'birth-\/input input' type ='date' required value=''>"{}};}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00095}00095                 \}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00096}00096             ?>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00097}00097             <?php}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00098}00098                 \textcolor{comment}{//Print birth date error}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00099}\mbox{\hyperlink{register_8php_a664bfa7117867b225b964c5191100918}{00099}}                 \textcolor{keywordflow}{if} (isset(\mbox{\hyperlink{register_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\_SESSION}}[\textcolor{stringliteral}{"{}birth\_error"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00100}00100                     echo \textcolor{stringliteral}{"{}<p class='php-\/errors'>"{}}.\$\_SESSION[\textcolor{stringliteral}{"{}birth\_error"{}}].\textcolor{stringliteral}{"{}</p>"{}};}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00101}00101                 \}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00102}00102             ?>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00103}00103             </label>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00104}00104             <p \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}error birth\_error"{}}></p>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00106}00106             <!-\/-\/ send the csrf token along with the form -\/-\/>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00107}00107             <input type=\textcolor{stringliteral}{"{}hidden"{}} name=\textcolor{stringliteral}{"{}csrf\_token"{}} value=\textcolor{stringliteral}{"{}<?php echo \$token; ?>"{}}>}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00109}00109             <input type = \textcolor{stringliteral}{"{}submit"{}} name=\textcolor{stringliteral}{"{}submit"{}} \textcolor{keyword}{class }= "{}register-\/form submit-\/button\textcolor{stringliteral}{"{} value = "{}}Register\textcolor{stringliteral}{"{}>}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00110}00110 \textcolor{stringliteral}{            <p class="{}}error register-\/error\textcolor{stringliteral}{"{}></p>}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00111}00111 \textcolor{stringliteral}{        </div>}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00112}00112 \textcolor{stringliteral}{    </form>}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00113}00113 \textcolor{stringliteral}{    <script>}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00114}00114 \textcolor{stringliteral}{    //Call a function to check the form using javascript on client side}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00115}00115 \textcolor{stringliteral}{    register\_init();}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00116}00116 \textcolor{stringliteral}{    </script>}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00117}00117 \textcolor{stringliteral}{    <?php }}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00118}00118 \textcolor{stringliteral}{    //Set required session values}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00119}\mbox{\hyperlink{register_8php_a0b0e940b30892d2c5794cd82b77f9ece}{00119}} \textcolor{stringliteral}{    \$\_SESSION["{}}name\_error\textcolor{stringliteral}{"{}] = NULL;}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00120}\mbox{\hyperlink{register_8php_a3a8d3baca10cc90eb77fda587e5e8ce1}{00120}} \textcolor{stringliteral}{    \$\_SESSION["{}}username\_error\textcolor{stringliteral}{"{}] = NULL;}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00121}\mbox{\hyperlink{register_8php_aa19dd9aab480f088e2c2db9ef14bb632}{00121}} \textcolor{stringliteral}{    \$\_SESSION["{}}email\_error\textcolor{stringliteral}{"{}] = NULL;}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00122}\mbox{\hyperlink{register_8php_a2c43f3ef5b045b36a1a8f274280ae5d8}{00122}} \textcolor{stringliteral}{    \$\_SESSION["{}}password\_error\textcolor{stringliteral}{"{}] = NULL;}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00123}\mbox{\hyperlink{register_8php_a7fb7ac652717d757587cae65be6d799f}{00123}} \textcolor{stringliteral}{    \$\_SESSION["{}}birth\_error\textcolor{stringliteral}{"{}] = NULL;}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00124}\mbox{\hyperlink{register_8php_a6b885af15f9d9a57885d914122b1462f}{00124}} \textcolor{stringliteral}{    \$\_SESSION["{}}name-\/value\textcolor{stringliteral}{"{}] = NULL;}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00125}\mbox{\hyperlink{register_8php_a433f80d00de0aa4a573c2b990d1756b7}{00125}} \textcolor{stringliteral}{    \$\_SESSION["{}}username-\/value\textcolor{stringliteral}{"{}] = NULL;}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00126}\mbox{\hyperlink{register_8php_ab8641e98fdfa3810b46f202d06139e45}{00126}} \textcolor{stringliteral}{    \$\_SESSION["{}}email-\/value\textcolor{stringliteral}{"{}] = NULL;}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00127}\mbox{\hyperlink{register_8php_a65b7c720340b2eaa86fa61f74677aa41}{00127}} \textcolor{stringliteral}{    \$\_SESSION["{}}birth-\/value\textcolor{stringliteral}{"{}] = NULL;}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00128}00128 \textcolor{stringliteral}{    ?>}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00129}00129 \textcolor{stringliteral}{</body>}}
+\DoxyCodeLine{\Hypertarget{register_8php_source_l00130}00130 \textcolor{stringliteral}{</html>}}
+
+\end{DoxyCode}

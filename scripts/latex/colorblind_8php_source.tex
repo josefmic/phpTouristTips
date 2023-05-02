@@ -1,0 +1,50 @@
+\hypertarget{colorblind_8php_source}{}\doxysection{colorblind.\+php}
+\mbox{\hyperlink{colorblind_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00001}00001 <?php}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00002}00002 \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{"{}colorblind"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00003}00003     \textcolor{comment}{//Set cookie time to 30 days}}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00004}00004     \$expire\_time = time() + (86400 * 30);}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00005}00005     \textcolor{comment}{//If there is a cookie and the button was pressed, change the value of the cookie}}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00006}00006     \textcolor{keywordflow}{if} (isset(\$\_COOKIE[\textcolor{stringliteral}{"{}colorblind"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00007}00007         \textcolor{keywordflow}{if} (\$\_COOKIE[\textcolor{stringliteral}{"{}colorblind"{}}] == \textcolor{stringliteral}{"{}true"{}}) \{}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00008}00008             setcookie(\textcolor{stringliteral}{"{}colorblind"{}}, \textcolor{stringliteral}{"{}false"{}}, \$expire\_time, \textcolor{stringliteral}{"{}/"{}});}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00009}00009         \}}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00010}00010         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00011}00011             setcookie(\textcolor{stringliteral}{"{}colorblind"{}}, \textcolor{stringliteral}{"{}true"{}}, \$expire\_time, \textcolor{stringliteral}{"{}/"{}});}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00012}00012         \}}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00013}00013     \}}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00014}00014     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00015}00015         setcookie(\textcolor{stringliteral}{"{}colorblind"{}}, \textcolor{stringliteral}{"{}true"{}}, \$expire\_time, \textcolor{stringliteral}{"{}/"{}});}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00016}00016     \}}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00017}00017     \textcolor{comment}{//Redirect back to index / logged\_index}}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00018}00018     \textcolor{keywordflow}{if} (isset(\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}username"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00019}00019         \textcolor{keywordflow}{if} ((\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}username"{}}]) != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00020}00020             header(\textcolor{stringliteral}{"{}Location: ../logged\_index.php"{}});}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00021}00021         \}}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00022}00022         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00023}00023             header(\textcolor{stringliteral}{"{}Location: ../index.php"{}});}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00024}00024         \}}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00025}00025     \}}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00026}00026     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00027}00027         header(\textcolor{stringliteral}{"{}Location: ../index.php"{}});}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00028}00028     \}}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00029}00029 \}}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00030}00030 \textcolor{comment}{//If a person tries to access this page without a "{}post"{} method, redirect him}}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00031}00031 \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00032}00032     \textcolor{keywordflow}{if} (isset(\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}username"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00033}00033         \textcolor{keywordflow}{if} ((\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}username"{}}]) != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00034}00034             header(\textcolor{stringliteral}{"{}Location: ../logged\_index.php"{}});}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00035}00035         \}}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00036}00036         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00037}00037             header(\textcolor{stringliteral}{"{}Location: ../index.php"{}});}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00038}00038         \}}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00039}00039     \}}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00040}00040     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00041}00041         header(\textcolor{stringliteral}{"{}Location: ../index.php"{}});}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00042}00042     \}}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00043}00043 \}}
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{colorblind_8php_source_l00045}00045 ?>}
+
+\end{DoxyCode}

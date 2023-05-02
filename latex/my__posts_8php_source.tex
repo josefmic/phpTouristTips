@@ -1,0 +1,117 @@
+\hypertarget{my__posts_8php_source}{}\doxysection{my\+\_\+posts.\+php}
+\mbox{\hyperlink{my__posts_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00001}00001 <?php}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00002}00002 session\_start();}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00004}00004 \textcolor{comment}{//Check if a user is logged in, if not, redirect to index.php}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00005}00005 \textcolor{keywordflow}{if} (isset(\mbox{\hyperlink{my__posts_8php_a97c93926ac4f4bf9db8d38d03478c1a6}{\$\_SESSION}}[\textcolor{stringliteral}{"{}username"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00006}00006     \textcolor{keywordflow}{if} ((\mbox{\hyperlink{my__posts_8php_a97c93926ac4f4bf9db8d38d03478c1a6}{\$\_SESSION}}[\textcolor{stringliteral}{"{}username"{}}]) == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00007}00007         header(\textcolor{stringliteral}{"{}Location: ./index.php"{}});}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00008}00008     \}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00009}00009 \}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00010}\mbox{\hyperlink{my__posts_8php_ab5442765599a2e0e39ed3c29d444a6b9}{00010}} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00011}00011     header(\textcolor{stringliteral}{"{}Location: ./index.php"{}});}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00012}00012 \}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00014}00014 \textcolor{comment}{//Set required session values}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00015}\mbox{\hyperlink{my__posts_8php_a97c93926ac4f4bf9db8d38d03478c1a6}{00015}} \mbox{\hyperlink{my__posts_8php_a97c93926ac4f4bf9db8d38d03478c1a6}{\$\_SESSION}}[\textcolor{stringliteral}{"{}city"{}}] = NULL;}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00016}\mbox{\hyperlink{my__posts_8php_ac765c9e71bf9bfe8478f3527eeb33d4b}{00016}} \mbox{\hyperlink{my__posts_8php_a97c93926ac4f4bf9db8d38d03478c1a6}{\$\_SESSION}}[\textcolor{stringliteral}{"{}is\_city"{}}] = False;}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00017}\mbox{\hyperlink{my__posts_8php_adcd67e50e6a3ebaf82968327029daf18}{00017}} \mbox{\hyperlink{my__posts_8php_a97c93926ac4f4bf9db8d38d03478c1a6}{\$\_SESSION}}[\textcolor{stringliteral}{"{}show\_button"{}}] = False;}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00019}00019 \textcolor{comment}{//Include the printing php script}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00020}00020 include \textcolor{stringliteral}{"{}./scripts/printing.php"{}};}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00021}00021 ?>}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00022}00022 <!DOCTYPE html>}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00023}00023 <html lang=\textcolor{stringliteral}{"{}en"{}}>}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00024}00024 <head>}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00025}00025     <title>Tourist tips</title>}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00026}00026     <meta charset=\textcolor{stringliteral}{"{}utf-\/8"{}}>}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00027}00027     <meta name=\textcolor{stringliteral}{"{}viewport"{}} content=\textcolor{stringliteral}{"{}width=device-\/width, initial-\/scale=1"{}}>}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00028}00028     <script type=\textcolor{stringliteral}{"{}text/javascript"{}} src=\textcolor{stringliteral}{"{}./scripts/ajax.js"{}}></script>}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00029}00029     <?php}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00030}00030         \textcolor{comment}{//Apply colorblind filter based on a cookie}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00031}00031         \textcolor{keywordflow}{if} (isset(\$\_COOKIE[\textcolor{stringliteral}{"{}colorblind"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00032}00032             \textcolor{keywordflow}{if} (\$\_COOKIE[\textcolor{stringliteral}{"{}colorblind"{}}] == \textcolor{stringliteral}{"{}true"{}}) \{}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00033}00033                 echo \textcolor{stringliteral}{"{}<link rel='stylesheet' href='./styles/index\_styles\_colorblind.css' type='text/css'>"{}};}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00034}00034             \}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00035}00035             \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00036}00036                 echo \textcolor{stringliteral}{"{}<link rel='stylesheet' href='./styles/index\_styles.css' type='text/css'>"{}};}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00037}00037             \}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00038}00038         \}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00039}00039         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00040}00040             echo \textcolor{stringliteral}{"{}<link rel='stylesheet' href='./styles/index\_styles.css' type='text/css'>"{}};}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00041}00041         \}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00042}00042     ?>}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00043}00043 </head>}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00044}00044 <body>}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00045}00045     <header \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}sidebar"{}}>}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00046}00046         <h2><a href=\textcolor{stringliteral}{"{}./logged\_index.php"{}} \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}title"{}}>Tourist tips.</a></h2>}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00047}00047         <div \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}menu\_list"{}}>}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00048}00048             <form method=\textcolor{stringliteral}{"{}post"{}} action=\textcolor{stringliteral}{"{}./scripts/logout.php"{}} \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}menu\_list"{}}>}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00049}00049                 <!-\/-\/ logout button -\/-\/>}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00050}00050                 <button \textcolor{keyword}{class}=\textcolor{stringliteral}{"{}register\_button username\_form"{}}>Log out</button>}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00051}00051                 <!-\/-\/ print the users name and make sure it isn\textcolor{stringliteral}{'t malicious -\/-\/>}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00052}00052 \textcolor{stringliteral}{                <p class = "{}register\_button"{}>}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00053}00053 \textcolor{stringliteral}{                <?php echo htmlspecialchars(\$\_SESSION["{}name"{}]); ?></p>}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00054}00054 \textcolor{stringliteral}{            </form>}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00055}00055 \textcolor{stringliteral}{        </div>}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00056}00056 \textcolor{stringliteral}{    </header>}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00057}00057 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00058}00058 \textcolor{stringliteral}{    <div class="{}forum"{}>}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00059}00059 \textcolor{stringliteral}{        <!-\/-\/ button for my posts -\/-\/>}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00060}00060 \textcolor{stringliteral}{        <p class="{}city-\/baby"{}>My posts</p>}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00061}00061 \textcolor{stringliteral}{    </div>}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00062}00062 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00063}00063 \textcolor{stringliteral}{    <div class="{}posts"{}>}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00064}00064 \textcolor{stringliteral}{        <?php}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00065}00065 \textcolor{stringliteral}{            //Script to print the posts}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00066}00066 \textcolor{stringliteral}{            if (filesize("{}./city\_tips/city\_tips.json"{}) != 0) \{}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00067}00067 \textcolor{stringliteral}{                \$city\_array = array();}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00068}00068 \textcolor{stringliteral}{                }}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00069}00069 \textcolor{stringliteral}{                //GET POSTS FROM SPECIFIC CITY}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00070}00070 \textcolor{stringliteral}{                \$existing\_posts = json\_decode(file\_get\_contents("{}./city\_tips/city\_tips.json"{}));}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00071}00071 \textcolor{stringliteral}{                foreach (\$existing\_posts as \$city) \{}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00072}00072 \textcolor{stringliteral}{                    if (!empty(\$city)) \{}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00073}00073 \textcolor{stringliteral}{                        foreach (\$city as \$post)}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00074}00074 \textcolor{stringliteral}{                        if (\$post-\/>author == \$\_SESSION["{}username"{}]) \{}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00075}00075 \textcolor{stringliteral}{                            array\_push(\$city\_array, \$post);}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00076}00076 \textcolor{stringliteral}{                        \}}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00077}00077 \textcolor{stringliteral}{                    \}}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00078}00078 \textcolor{stringliteral}{                \}}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00079}00079 \textcolor{stringliteral}{                \$city\_array = array\_reverse(\$city\_array);}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00080}00080 \textcolor{stringliteral}{                \$\_SESSION["{}ismypost"{}] = True;}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00081}00081 \textcolor{stringliteral}{                \$active\_city = null;}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00082}00082 \textcolor{stringliteral}{                //APPLY FILTER}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00083}00083 \textcolor{stringliteral}{                \$\_SESSION["{}filter"{}] = "{}newest"{};}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00084}00084 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00085}00085 \textcolor{stringliteral}{                //Call a function to print the posts}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00086}00086 \textcolor{stringliteral}{                print\_posts(\$active\_city, \$city\_array);}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00087}00087 \textcolor{stringliteral}{            \}}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00088}00088 \textcolor{stringliteral}{        ?>}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00089}00089 \textcolor{stringliteral}{        <div id="{}more-\/posts"{}></div>}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00090}00090 \textcolor{stringliteral}{        <?php}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00091}00091 \textcolor{stringliteral}{        //If more posts left, show the "{}show more"{} button}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00092}00092 \textcolor{stringliteral}{        if (\$\_SESSION["{}show\_button"{}]) \{}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00093}00093 \textcolor{stringliteral}{            echo "{}<button name ='}show-\/more\textcolor{stringliteral}{' type='}submit\textcolor{stringliteral}{' id='}show-\/more\textcolor{stringliteral}{' class='}show-\/more\textcolor{stringliteral}{' style='}display: block\textcolor{stringliteral}{'>Show more</button>}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00094}00094 \textcolor{stringliteral}{            <input type='}hidden\textcolor{stringliteral}{' id='}city\textcolor{stringliteral}{' value="{}.\$active\_city."{}>"{};}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00095}00095 \textcolor{stringliteral}{        \}}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00096}00096 \textcolor{stringliteral}{        ?>}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00097}00097 \textcolor{stringliteral}{    </div>}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00098}00098 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00099}00099 \textcolor{stringliteral}{    <script>}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00100}00100 \textcolor{stringliteral}{    //Call the ajax function to load more posts without refreshing}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00101}00101 \textcolor{stringliteral}{    ajax\_init();}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00102}00102 \textcolor{stringliteral}{    </script>}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00103}00103 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00104}00104 \textcolor{stringliteral}{    <?php}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00105}00105 \textcolor{stringliteral}{    //Again set required session values}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00106}\mbox{\hyperlink{my__posts_8php_a9085677aadfa5e74b21b958613a77ba7}{00106}} \textcolor{stringliteral}{    \$\_SESSION["{}incorrect\_pass"{}] = NULL;}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00107}\mbox{\hyperlink{my__posts_8php_a5dde990e8c2cff5cc86c4b1e34bda340}{00107}} \textcolor{stringliteral}{    \$\_SESSION["{}doesnt\_exist"{}] = NULL;}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00108}\mbox{\hyperlink{my__posts_8php_aa337a66f30292a143fca04e96af48e0b}{00108}} \textcolor{stringliteral}{    \$\_SESSION["{}login-\/value"{}] = NULL;}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00109}00109 \textcolor{stringliteral}{    ?>}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00110}00110 \textcolor{stringliteral}{</body>}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00111}00111 \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{my__posts_8php_source_l00112}00112 \textcolor{stringliteral}{</html> }}
+
+\end{DoxyCode}

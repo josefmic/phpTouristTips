@@ -1,0 +1,119 @@
+\hypertarget{login_8php_source}{}\doxysection{login.\+php}
+\mbox{\hyperlink{login_8php}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00001}00001 <?php}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00002}00002 session\_start();}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00004}00004 \textcolor{comment}{//Save the GET value}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00005}00005 \textcolor{keywordflow}{if} (isset(\$\_GET[\textcolor{stringliteral}{"{}city"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00006}00006     \$active\_city = \$\_GET[\textcolor{stringliteral}{"{}city"{}}];}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00007}00007     \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00009}00009 \textcolor{comment}{//Check the csrf token, if it's malicious, redirect the user}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00010}00010 \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{"{}csrf\_token"{}}]) and isset(\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}csrf\_token"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00011}00011     \textcolor{keywordflow}{if} (\$\_POST[\textcolor{stringliteral}{"{}csrf\_token"{}}] !== \mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}csrf\_token"{}}]) \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00012}00012         \textcolor{keywordflow}{if} (\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}is\_city"{}}] == False) \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00013}00013             header(\textcolor{stringliteral}{"{}Location: ../index.php"{}});}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00014}00014         \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00015}00015         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00016}00016             header(\textcolor{stringliteral}{"{}Location: ../city.php?city="{}}.\$active\_city);}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00017}00017         \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00018}00018     \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00019}00019 \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00020}00020 \textcolor{comment}{//Set required session values}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00021}\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{00021}} \mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}incorrect\_pass"{}}] = NULL;}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00022}\mbox{\hyperlink{login_8php_a5dde990e8c2cff5cc86c4b1e34bda340}{00022}} \mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}doesnt\_exist"{}}] = NULL;}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00023}00023 \textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{'submit'}])) \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00024}00024     \textcolor{comment}{//Save the existing users}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00025}00025     \$users\_get = json\_decode(file\_get\_contents(\textcolor{stringliteral}{"{}users.json"{}}));}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00026}00026     \textcolor{comment}{//If there aren't any users, you can't log in}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00027}00027     \textcolor{keywordflow}{if} (empty(\$users\_get)) \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00028}00028         \$doesnt\_exist = \textcolor{stringliteral}{"{}User doesn't exist"{}};}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00029}00029         \mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}doesnt\_exist"{}}] = \$doesnt\_exist;}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00030}00030         \textcolor{keywordflow}{if} (\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}is\_city"{}}] == False) \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00031}00031             header(\textcolor{stringliteral}{"{}Location: ../index.php"{}});}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00032}00032         \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00033}00033         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00034}00034             header(\textcolor{stringliteral}{"{}Location: ../city.php?city="{}}.\$active\_city);}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00035}00035         \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00036}00036     \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00037}00037     \textcolor{comment}{//Else if there are some users}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00038}00038     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00039}00039         \$does\_exist = False;}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00040}00040         \textcolor{comment}{//For every user, if the username matches, save his info into variables }}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00041}00041         \textcolor{keywordflow}{foreach} (\$users\_get as \$item) \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00042}00042             \textcolor{keywordflow}{if} (\$item-\/>username == \$\_POST[\textcolor{stringliteral}{"{}username"{}}])\{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00043}00043                 \$does\_exist = True;}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00044}00044                 \$name = \$item-\/>name;}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00045}00045                 \$username = \$item-\/>username;}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00046}00046                 \$pass = \$item-\/>password;}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00047}00047                 \$isadmin = \$item-\/>isadmin;}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00048}00048                 \textcolor{comment}{//Using a php built-\/in function, verify if the password is correct, if yes, save user's values into sessions}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00049}00049                 \$verify\_pass = password\_verify(\$\_POST[\textcolor{stringliteral}{"{}password"{}}], \$pass);}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00050}00050                 \textcolor{keywordflow}{if} (\$verify\_pass == True) \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00051}00051                     \mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}name"{}}] = \$name;}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00052}00052                     \mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}username"{}}] = \$username;}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00053}00053                     \mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}doesnt\_exist"{}}] = NULL;}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00054}00054                     \mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}isadmin"{}}] = \$isadmin;}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00055}00055                     \mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}author"{}}] = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00056}00056                     \textcolor{comment}{//Redirect the user after successful login}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00057}00057                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}is\_city"{}}] == False) \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00058}00058                         header(\textcolor{stringliteral}{"{}Location: ../logged\_index.php"{}});}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00059}00059                         exit();}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00060}00060                     \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00061}00061                     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00062}00062                         header(\textcolor{stringliteral}{"{}Location: ../logged\_city.php?city="{}}.\$active\_city);}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00063}00063                         exit();}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00064}00064                     \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00065}00065                 \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00066}00066                 \textcolor{comment}{//Else generate incorrect password error and redirect}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00067}00067                 \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00068}00068                     \$incorrect\_pass = \textcolor{stringliteral}{"{}Incorrect password"{}};}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00069}00069                     \mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}incorrect\_pass"{}}] = \$incorrect\_pass;}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00070}00070                     \mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}doesnt\_exist"{}}] = NULL;}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00071}00071                     \mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}login-\/value"{}}] = \$\_POST[\textcolor{stringliteral}{"{}username"{}}];}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00072}00072                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}is\_city"{}}] == False) \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00073}00073                         header(\textcolor{stringliteral}{"{}Location: ../index.php"{}});}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00074}00074                         exit();}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00075}00075                     \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00076}00076                     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00077}00077                         header(\textcolor{stringliteral}{"{}Location: ../city.php?city="{}}.\$active\_city);}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00078}00078                         exit();}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00079}00079                     \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00080}00080                 \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00081}00081             \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00082}00082         \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00083}00083     \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00084}00084     \textcolor{comment}{//If the cycle didn't find any user with that username, generate a username error and redirect}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00085}00085     \textcolor{keywordflow}{if} (\$does\_exist == False) \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00086}00086         \$doesnt\_exist = \textcolor{stringliteral}{"{}User doesn't exist"{}};}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00087}00087         \mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}doesnt\_exist"{}}] = \$doesnt\_exist;}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00088}00088         \mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}login-\/value"{}}] = \$\_POST[\textcolor{stringliteral}{"{}username"{}}];}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00089}00089         \textcolor{keywordflow}{if} (\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}is\_city"{}}] == False) \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00090}00090             header(\textcolor{stringliteral}{"{}Location: ../index.php"{}});}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00091}00091             exit();}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00092}00092         \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00093}00093         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00094}00094             header(\textcolor{stringliteral}{"{}Location: ../city.php?city="{}}.\$active\_city);}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00095}00095             exit();}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00096}00096         \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00097}00097     \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00098}00098 \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00099}00099 \textcolor{comment}{//If a user has accessed this page without the "{}POST"{} request, redirect him}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00100}00100 \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00101}00101     \textcolor{keywordflow}{if} (isset(\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}username"{}}])) \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00102}00102         \textcolor{keywordflow}{if} ((\mbox{\hyperlink{login_8php_a675390bc78fd5fcebff3e6ee8c6347f7}{\$\_SESSION}}[\textcolor{stringliteral}{"{}username"{}}]) != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00103}00103             header(\textcolor{stringliteral}{"{}Location: ../logged\_index.php"{}});}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00104}00104         \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00105}00105         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00106}00106             header(\textcolor{stringliteral}{"{}Location: ../index.php"{}});}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00107}00107         \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00108}00108     \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00109}00109     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00110}00110         header(\textcolor{stringliteral}{"{}Location: ../index.php"{}});}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00111}00111     \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00112}00112 \}}
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{login_8php_source_l00114}00114 ?>}
+
+\end{DoxyCode}

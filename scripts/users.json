@@ -1,0 +1,154 @@
+[
+    {
+        "name": "Josef Mich\u00e1lek",
+        "username": "michajo6",
+        "email": "michajo6@fel.cvut.cz",
+        "password": "$2y$10$YAbMWgya84VVz4F4DAbJ8eGvV7FA.qh6hGIMpXu4PA9NceUzk.0Gq",
+        "birth": "2003-03-18",
+        "isadmin": true
+    },
+    {
+        "name": "asd",
+        "username": "asd",
+        "email": "asd@asd",
+        "password": "$2y$10$HFwQKAJrI76OC5RimvU0COc\/bHsE7Mknx9PPBP3iBNv6Nb5RZS\/qu",
+        "birth": "0001-01-01",
+        "isadmin": false
+    },
+    {
+        "name": "fuck you",
+        "username": "fuckyou",
+        "email": "m@m",
+        "password": "$2y$10$lIsfCI\/4sjXGOcWJD3m.YOTD2dvePqfjL1DEuNfKF7NsiFQdjrHNO",
+        "birth": "3220-12-03",
+        "isadmin": false
+    },
+    {
+        "name": "Josef Mich\u00e1lek",
+        "username": "michajo7",
+        "email": "pp@asd.cz",
+        "password": "$2y$10$C1tZZ60aA\/llTGmq.4jcLO3lr5zwIyG1vFifBrj02AwotxrzBTiTq",
+        "birth": "2003-12-03",
+        "isadmin": false
+    },
+    {
+        "name": "Perdo",
+        "username": "masdon",
+        "email": "asd@a",
+        "password": "$2y$10$AiCYcOXsU5EN.SBECKeKtu8mUpG1rXR8Nk5CYBySGtGLXqNFuzp1W",
+        "birth": "2006-05-03",
+        "isadmin": false
+    },
+    {
+        "name": "stanislav moravek",
+        "username": "stanislavan",
+        "email": "mindar@as",
+        "password": "$2y$10$z6Ke2g8qPJEsbBGEk9U8VuXEJ0BCe6pPMV24U2\/gnhJqFqmclmoRO",
+        "birth": "2003-12-03",
+        "isadmin": false
+    },
+    {
+        "name": "dordon",
+        "username": "borbon",
+        "email": "asd@a",
+        "password": "$2y$10$EMbt9vlZ3f5WPmnJMSansuL7q00Ab8Wvtu4vEtcosfQ2eGRZHgqKe",
+        "birth": "2003-12-03",
+        "isadmin": false
+    },
+    {
+        "name": "pokus tisic",
+        "username": "fuckmepls",
+        "email": "meee@asd",
+        "password": "$2y$10$g2hBkZJ4Lr8Fj3.S3EunxOhK5BjZV8rqG14JlRDafEB09lGvpqgGK",
+        "birth": "2003-12-03",
+        "isadmin": false
+    },
+    {
+        "name": "Petr Plavec",
+        "username": "petrplav",
+        "email": "plavka@cz",
+        "password": "$2y$10$Ni.0Xom9j\/E9zeYyaNxiAudMdRP6qjwU8nIdksTPGoNARW11pDZ3e",
+        "birth": "2003-12-03",
+        "isadmin": false
+    },
+    {
+        "name": "darden adn",
+        "username": "pokus milion",
+        "email": "asd@xn--fea",
+        "password": "$2y$10$HukpUh3meJlXz8wGHOnoX.0FqJTDwQyutv4ZW8SiZjSVSvffBWdyG",
+        "birth": "2003-03-18",
+        "isadmin": false
+    },
+    {
+        "name": "Josef Masdna",
+        "username": "boroolo",
+        "email": "asd@asd",
+        "password": "$2y$10$9.dEi0wKUIt65yjzMyUNAuQXHGaMxpf6gqQvn24CJwuTw.owB49IG",
+        "birth": "2003-03-12",
+        "isadmin": false
+    },
+    {
+        "name": "John Frusciante",
+        "username": "frushik2",
+        "email": "frush@bush.cz",
+        "password": "$2y$10$prAluBmkr7n.gvMZ5kuWuupSTHcLaxEdzdVTBnMcn5XaDZYN0LLSy",
+        "birth": "2003-12-03",
+        "isadmin": false
+    },
+    {
+        "name": "asadasd",
+        "username": "asdasddasd",
+        "email": "asd@asd",
+        "password": "$2y$10$.fdXz8FQdhFV5uBQ.Duo7O2ntY3kF1QNPUEY4Eng4KMRhSSHGXEi6",
+        "birth": "2003-12-03",
+        "isadmin": false
+    },
+    {
+        "name": "Anton\u00edn Mich\u00e1lek",
+        "username": "michant",
+        "email": "antonin@gmail.com",
+        "password": "$2y$10$kG1uMBUzk6Thc\/rmEvUcUur92j.8WhLj2vJXGyQwlT4YaZrUVQLsm",
+        "birth": "1999-02-27",
+        "isadmin": false
+    },
+    {
+        "name": "bruhman",
+        "username": "bruhman",
+        "email": "bruh@bruh",
+        "password": "$2y$10$boaZ8l5NErDDId65KI2tBeQ86cM5FU2VmBIWC\/6D2Kra.Uhj2mutm",
+        "birth": "2003-02-02",
+        "isadmin": false
+    },
+    {
+        "name": "Trueman",
+        "username": "pepik",
+        "email": "pepik@pepa",
+        "password": "$2y$10$P38tkkLETnEUFoGcxcF5mOAEisjKjud.u2qraXZoip0JslO1f1rqq",
+        "birth": "2003-03-18",
+        "isadmin": false
+    },
+    {
+        "name": "Pepino",
+        "username": "Bruhman",
+        "email": "michabab@asd",
+        "password": "$2y$10$chHpEipvx09h\/Dqz.YZR3.MSZVkFbXJexVf7AY58E\/29IvDRGSEvy",
+        "birth": "2003-12-03",
+        "isadmin": false
+    },
+    {
+        "name": "testing",
+        "username": "testing",
+        "email": "testing@testing",
+        "password": "$2y$10$EzSnOf50ZgVlEjF.UQzTme8QxQYC395FafTx4P6oAxYtqqu4xk7O2",
+        "birth": "2004-12-03",
+        "isadmin": false
+    },
+    {
+        "name": "asdasd",
+        "username": "asdasd",
+        "email": "asmich@a",
+        "password": "$2y$10$FzCW4wLjpIN\/XC3bwXu6re9oM1Jnwp\/zLe9YHOMOe28W9lz3cIPKG",
+        "birth": "2003-02-02",
+        "isadmin": false
+    }
+]

@@ -1,0 +1,196 @@
+\hypertarget{logged__city_8php}{}\doxysection{logged\+\_\+city.\+php File Reference}
+\label{logged__city_8php}\index{logged\_city.php@{logged\_city.php}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{logged__city_8php_a3b467c5b7fe2d647b8e47205fde6fb0c}{\$\+\_\+\+SESSION}} \mbox{[}\char`\"{}ismypost\char`\"{}\mbox{]} = False
+\item 
+\mbox{\hyperlink{city_8php_a7a286ac6ab62f89d81f8cb151b4e9f4e}{if}}(isset(\$\+\_\+\+GET\mbox{[}\char`\"{}city\char`\"{}\mbox{]}) and !empty(\$\+\_\+\+GET\mbox{[}\char`\"{}city\char`\"{}\mbox{]})) \mbox{\hyperlink{logged__city_8php_ad07b4e1bbbf62a8ef697b809625292ef}{else}}
+\item 
+\mbox{\hyperlink{logged__city_8php_ab26a8408ecd4d794f9d1b512227be029}{\$\+\_\+\+SESSION}} \mbox{[}\char`\"{}csrf\+\_\+token\char`\"{}\mbox{]} = \$token
+\item 
+\mbox{\hyperlink{logged__city_8php_abbc5c7e387d22501e61eb65be93b58b4}{\$\+\_\+\+SESSION}} \mbox{[}\char`\"{}author\char`\"{}\mbox{]} = True
+\item 
+\mbox{\hyperlink{logged__city_8php_ac765c9e71bf9bfe8478f3527eeb33d4b}{\$\+\_\+\+SESSION}} \mbox{[}\char`\"{}is\+\_\+city\char`\"{}\mbox{]} = True
+\item 
+\mbox{\hyperlink{logged__city_8php_a97c93926ac4f4bf9db8d38d03478c1a6}{\$\+\_\+\+SESSION}} \mbox{[}\char`\"{}city\char`\"{}\mbox{]} = \$active\+\_\+city
+\item 
+if(isset(\$\+\_\+\+SESSION\mbox{[}\char`\"{}title\+\_\+error\char`\"{}\mbox{]})) if(isset( \$\+\_\+\+SESSION\mbox{[}\char`\"{}text-\/value\char`\"{}\mbox{]})) \mbox{\hyperlink{logged__city_8php_ae1be1fd2e70528993204eb702a2b0cb8}{if}} (isset( \$\+\_\+\+SESSION\mbox{[}\char`\"{}text\+\_\+error\char`\"{}\mbox{]}))
+\item 
+\mbox{\hyperlink{logged__city_8php_a5544c56adf8c15344b47edef117c966c}{\$adress}} = \char`\"{}./logged\+\_\+city.\+php?city=\char`\"{}.\$active\+\_\+city
+\item 
+\mbox{\hyperlink{logged__city_8php_aca99d2b9a2dabe2f9a09e8d14153807a}{\$city\+\_\+array}} = array\+\_\+reverse(json\+\_\+decode(file\+\_\+get\+\_\+contents(\char`\"{}./city\+\_\+tips/city\+\_\+tips.\+json\char`\"{}))-\/$>$\$active\+\_\+city)
+\item 
+\mbox{\hyperlink{city_8php_a7a286ac6ab62f89d81f8cb151b4e9f4e}{if}}(\$\+\_\+\+SESSION\mbox{[}\char`\"{}show\+\_\+button\char`\"{}\mbox{]}) \mbox{\hyperlink{logged__city_8php_a31cc682a91fd72bcdd4c8f54243a9686}{\$\+\_\+\+SESSION}} \mbox{[}\char`\"{}text\+\_\+error\char`\"{}\mbox{]} = NULL
+\item 
+\mbox{\hyperlink{logged__city_8php_a611fb7f67eb8cbe1a4ada3ddf520ff46}{\$\+\_\+\+SESSION}} \mbox{[}\char`\"{}title\+\_\+error\char`\"{}\mbox{]} = NULL
+\item 
+\mbox{\hyperlink{logged__city_8php_ae500e9792d6a2b79d7f4a8578a038137}{\$\+\_\+\+SESSION}} \mbox{[}\char`\"{}title-\/value\char`\"{}\mbox{]} = NULL
+\item 
+\mbox{\hyperlink{logged__city_8php_a13ae227638464f3de5b8e2166a024bab}{\$\+\_\+\+SESSION}} \mbox{[}\char`\"{}text-\/value\char`\"{}\mbox{]} = NULL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{logged__city_8php_abbc5c7e387d22501e61eb65be93b58b4}\label{logged__city_8php_abbc5c7e387d22501e61eb65be93b58b4}} 
+\index{logged\_city.php@{logged\_city.php}!\$\_SESSION@{\$\_SESSION}}
+\index{\$\_SESSION@{\$\_SESSION}!logged\_city.php@{logged\_city.php}}
+\doxysubsubsection{\texorpdfstring{\$\_SESSION}{$\_SESSION}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily \$\+\_\+\+SESSION\mbox{[}\char`\"{}author\char`\"{}\mbox{]} = True}
+
+
+
+Definition at line \mbox{\hyperlink{logged__city_8php_source_l00046}{46}} of file \mbox{\hyperlink{logged__city_8php_source}{logged\+\_\+city.\+php}}.
+
+\mbox{\Hypertarget{logged__city_8php_a97c93926ac4f4bf9db8d38d03478c1a6}\label{logged__city_8php_a97c93926ac4f4bf9db8d38d03478c1a6}} 
+\index{logged\_city.php@{logged\_city.php}!\$\_SESSION@{\$\_SESSION}}
+\index{\$\_SESSION@{\$\_SESSION}!logged\_city.php@{logged\_city.php}}
+\doxysubsubsection{\texorpdfstring{\$\_SESSION}{$\_SESSION}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily \$\+\_\+\+SESSION\mbox{[}\char`\"{}city\char`\"{}\mbox{]} = \$active\+\_\+city}
+
+
+
+Definition at line \mbox{\hyperlink{logged__city_8php_source_l00048}{48}} of file \mbox{\hyperlink{logged__city_8php_source}{logged\+\_\+city.\+php}}.
+
+\mbox{\Hypertarget{logged__city_8php_ab26a8408ecd4d794f9d1b512227be029}\label{logged__city_8php_ab26a8408ecd4d794f9d1b512227be029}} 
+\index{logged\_city.php@{logged\_city.php}!\$\_SESSION@{\$\_SESSION}}
+\index{\$\_SESSION@{\$\_SESSION}!logged\_city.php@{logged\_city.php}}
+\doxysubsubsection{\texorpdfstring{\$\_SESSION}{$\_SESSION}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily \$\+\_\+\+SESSION\mbox{[}\char`\"{}csrf\+\_\+token\char`\"{}\mbox{]} = \$token}
+
+
+
+Definition at line \mbox{\hyperlink{logged__city_8php_source_l00040}{40}} of file \mbox{\hyperlink{logged__city_8php_source}{logged\+\_\+city.\+php}}.
+
+\mbox{\Hypertarget{logged__city_8php_ac765c9e71bf9bfe8478f3527eeb33d4b}\label{logged__city_8php_ac765c9e71bf9bfe8478f3527eeb33d4b}} 
+\index{logged\_city.php@{logged\_city.php}!\$\_SESSION@{\$\_SESSION}}
+\index{\$\_SESSION@{\$\_SESSION}!logged\_city.php@{logged\_city.php}}
+\doxysubsubsection{\texorpdfstring{\$\_SESSION}{$\_SESSION}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily \$\+\_\+\+SESSION\mbox{[}\char`\"{}is\+\_\+city\char`\"{}\mbox{]} = True}
+
+
+
+Definition at line \mbox{\hyperlink{logged__city_8php_source_l00047}{47}} of file \mbox{\hyperlink{logged__city_8php_source}{logged\+\_\+city.\+php}}.
+
+\mbox{\Hypertarget{logged__city_8php_a3b467c5b7fe2d647b8e47205fde6fb0c}\label{logged__city_8php_a3b467c5b7fe2d647b8e47205fde6fb0c}} 
+\index{logged\_city.php@{logged\_city.php}!\$\_SESSION@{\$\_SESSION}}
+\index{\$\_SESSION@{\$\_SESSION}!logged\_city.php@{logged\_city.php}}
+\doxysubsubsection{\texorpdfstring{\$\_SESSION}{$\_SESSION}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily \$\+\_\+\+SESSION\mbox{[}\char`\"{}ismypost\char`\"{}\mbox{]} = False}
+
+
+
+Definition at line \mbox{\hyperlink{logged__city_8php_source_l00004}{4}} of file \mbox{\hyperlink{logged__city_8php_source}{logged\+\_\+city.\+php}}.
+
+\mbox{\Hypertarget{logged__city_8php_a13ae227638464f3de5b8e2166a024bab}\label{logged__city_8php_a13ae227638464f3de5b8e2166a024bab}} 
+\index{logged\_city.php@{logged\_city.php}!\$\_SESSION@{\$\_SESSION}}
+\index{\$\_SESSION@{\$\_SESSION}!logged\_city.php@{logged\_city.php}}
+\doxysubsubsection{\texorpdfstring{\$\_SESSION}{$\_SESSION}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily \$\+\_\+\+SESSION\mbox{[}\char`\"{}text-\/value\char`\"{}\mbox{]} = NULL}
+
+
+
+Definition at line \mbox{\hyperlink{logged__city_8php_source_l00193}{193}} of file \mbox{\hyperlink{logged__city_8php_source}{logged\+\_\+city.\+php}}.
+
+\mbox{\Hypertarget{logged__city_8php_a31cc682a91fd72bcdd4c8f54243a9686}\label{logged__city_8php_a31cc682a91fd72bcdd4c8f54243a9686}} 
+\index{logged\_city.php@{logged\_city.php}!\$\_SESSION@{\$\_SESSION}}
+\index{\$\_SESSION@{\$\_SESSION}!logged\_city.php@{logged\_city.php}}
+\doxysubsubsection{\texorpdfstring{\$\_SESSION}{$\_SESSION}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{city_8php_a7a286ac6ab62f89d81f8cb151b4e9f4e}{if}} ( \$\+\_\+\+SESSION\mbox{[}\char`\"{}show\+\_\+button\char`\"{}\mbox{]}) \$\+\_\+\+SESSION\mbox{[}\char`\"{}text\+\_\+error\char`\"{}\mbox{]} = NULL}
+
+
+
+Definition at line \mbox{\hyperlink{logged__city_8php_source_l00190}{190}} of file \mbox{\hyperlink{logged__city_8php_source}{logged\+\_\+city.\+php}}.
+
+\mbox{\Hypertarget{logged__city_8php_ae500e9792d6a2b79d7f4a8578a038137}\label{logged__city_8php_ae500e9792d6a2b79d7f4a8578a038137}} 
+\index{logged\_city.php@{logged\_city.php}!\$\_SESSION@{\$\_SESSION}}
+\index{\$\_SESSION@{\$\_SESSION}!logged\_city.php@{logged\_city.php}}
+\doxysubsubsection{\texorpdfstring{\$\_SESSION}{$\_SESSION}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily \$\+\_\+\+SESSION\mbox{[}\char`\"{}title-\/value\char`\"{}\mbox{]} = NULL}
+
+
+
+Definition at line \mbox{\hyperlink{logged__city_8php_source_l00192}{192}} of file \mbox{\hyperlink{logged__city_8php_source}{logged\+\_\+city.\+php}}.
+
+\mbox{\Hypertarget{logged__city_8php_a611fb7f67eb8cbe1a4ada3ddf520ff46}\label{logged__city_8php_a611fb7f67eb8cbe1a4ada3ddf520ff46}} 
+\index{logged\_city.php@{logged\_city.php}!\$\_SESSION@{\$\_SESSION}}
+\index{\$\_SESSION@{\$\_SESSION}!logged\_city.php@{logged\_city.php}}
+\doxysubsubsection{\texorpdfstring{\$\_SESSION}{$\_SESSION}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily \$\+\_\+\+SESSION\mbox{[}\char`\"{}title\+\_\+error\char`\"{}\mbox{]} = NULL}
+
+
+
+Definition at line \mbox{\hyperlink{logged__city_8php_source_l00191}{191}} of file \mbox{\hyperlink{logged__city_8php_source}{logged\+\_\+city.\+php}}.
+
+\mbox{\Hypertarget{logged__city_8php_a5544c56adf8c15344b47edef117c966c}\label{logged__city_8php_a5544c56adf8c15344b47edef117c966c}} 
+\index{logged\_city.php@{logged\_city.php}!\$adress@{\$adress}}
+\index{\$adress@{\$adress}!logged\_city.php@{logged\_city.php}}
+\doxysubsubsection{\texorpdfstring{\$adress}{$adress}}
+{\footnotesize\ttfamily \$adress = \char`\"{}./logged\+\_\+city.\+php?city=\char`\"{}.\$active\+\_\+city}
+
+
+
+Definition at line \mbox{\hyperlink{logged__city_8php_source_l00147}{147}} of file \mbox{\hyperlink{logged__city_8php_source}{logged\+\_\+city.\+php}}.
+
+\mbox{\Hypertarget{logged__city_8php_aca99d2b9a2dabe2f9a09e8d14153807a}\label{logged__city_8php_aca99d2b9a2dabe2f9a09e8d14153807a}} 
+\index{logged\_city.php@{logged\_city.php}!\$city\_array@{\$city\_array}}
+\index{\$city\_array@{\$city\_array}!logged\_city.php@{logged\_city.php}}
+\doxysubsubsection{\texorpdfstring{\$city\_array}{$city\_array}}
+{\footnotesize\ttfamily \$city\+\_\+array = array\+\_\+reverse(json\+\_\+decode(file\+\_\+get\+\_\+contents(\char`\"{}./city\+\_\+tips/city\+\_\+tips.\+json\char`\"{}))-\/$>$\$active\+\_\+city)}
+
+
+
+Definition at line \mbox{\hyperlink{logged__city_8php_source_l00159}{159}} of file \mbox{\hyperlink{logged__city_8php_source}{logged\+\_\+city.\+php}}.
+
+\mbox{\Hypertarget{logged__city_8php_ad07b4e1bbbf62a8ef697b809625292ef}\label{logged__city_8php_ad07b4e1bbbf62a8ef697b809625292ef}} 
+\index{logged\_city.php@{logged\_city.php}!else@{else}}
+\index{else@{else}!logged\_city.php@{logged\_city.php}}
+\doxysubsubsection{\texorpdfstring{else}{else}}
+{\footnotesize\ttfamily \mbox{\hyperlink{city_8php_a7a286ac6ab62f89d81f8cb151b4e9f4e}{if}} (isset( \$\+\_\+\+POST\mbox{[}\char`\"{}oldest\char`\"{}\mbox{]})) else}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (isset(\mbox{\hyperlink{logged__city_8php_a3b467c5b7fe2d647b8e47205fde6fb0c}{\$\_SESSION}}[\textcolor{stringliteral}{"{}username"{}}])) \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} ((\mbox{\hyperlink{logged__city_8php_a3b467c5b7fe2d647b8e47205fde6fb0c}{\$\_SESSION}}[\textcolor{stringliteral}{"{}username"{}}]) != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{            header(\textcolor{stringliteral}{"{}Location: ./logged\_index.php"{}});}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{            header(\textcolor{stringliteral}{"{}Location: ./index.php"{}});}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{        header(\textcolor{stringliteral}{"{}Location: ./index.php"{}});}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (isset(\$\_POST[\textcolor{stringliteral}{"{}csrf\_token"{}}]) and isset(\mbox{\hyperlink{logged__city_8php_a3b467c5b7fe2d647b8e47205fde6fb0c}{\$\_SESSION}}[\textcolor{stringliteral}{"{}csrf\_token"{}}])) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (\$\_POST[\textcolor{stringliteral}{"{}csrf\_token"{}}] !== \mbox{\hyperlink{logged__city_8php_a3b467c5b7fe2d647b8e47205fde6fb0c}{\$\_SESSION}}[\textcolor{stringliteral}{"{}csrf\_token"{}}]) \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if} (\mbox{\hyperlink{logged__city_8php_a3b467c5b7fe2d647b8e47205fde6fb0c}{\$\_SESSION}}[\textcolor{stringliteral}{"{}is\_city"{}}] == False) \{}
+\DoxyCodeLine{            header(\textcolor{stringliteral}{"{}Location: ../index.php"{}});}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{            header(\textcolor{stringliteral}{"{}Location: ../city.php?city="{}}.\$active\_city);}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{city_8php_a00ae4fcafb1145f5e968bdf920f83e2e}{\$token}} = bin2hex(random\_bytes(32))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{logged__city_8php_source_l00012}{12}} of file \mbox{\hyperlink{logged__city_8php_source}{logged\+\_\+city.\+php}}.
+
+\mbox{\Hypertarget{logged__city_8php_ae1be1fd2e70528993204eb702a2b0cb8}\label{logged__city_8php_ae1be1fd2e70528993204eb702a2b0cb8}} 
+\index{logged\_city.php@{logged\_city.php}!if@{if}}
+\index{if@{if}!logged\_city.php@{logged\_city.php}}
+\doxysubsubsection{\texorpdfstring{if}{if}}
+{\footnotesize\ttfamily if(isset( \$\+\_\+\+SESSION\mbox{[}\char`\"{}title\+\_\+error\char`\"{}\mbox{]})) if(isset(\$\+\_\+\+SESSION\mbox{[}\char`\"{}text-\/value\char`\"{}\mbox{]})) if(isset(\$\+\_\+\+SESSION\mbox{[}\char`\"{}text\+\_\+error\char`\"{}\mbox{]})) (\begin{DoxyParamCaption}\item[{isset( \$\+\_\+\+SESSION\mbox{[}\char`\"{}text\+\_\+error\char`\"{}\mbox{]})}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{logged__city_8php_source_l00135}{135}} of file \mbox{\hyperlink{logged__city_8php_source}{logged\+\_\+city.\+php}}.
+
